@@ -15,7 +15,7 @@ namespace BLL
             return DAL.GestioneKneipps.ReadKneipp();
         }
 
-        public void UpdateKneipp(User userToEnqueue)
+        public static void UpdateKneipp(User userToEnqueue)
         {
             DAL.GestioneKneipps.UpdateKneipp(userToEnqueue);
         }
