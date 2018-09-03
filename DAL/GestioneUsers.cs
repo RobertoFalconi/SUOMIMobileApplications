@@ -32,7 +32,25 @@ namespace DAL
 
                 conn.Close();
             }
+
+            string query = "SELECT Id FROM Users WHERE Users.Nickname = '" + userDaInserire.Nickname + "'";
+            SqlConnection conn2 = Connetti();
+            SqlDataReader reader;
+            using (conn2)
+            {
+                conn2.Open();
+                SqlCommand command = new SqlCommand(query);
+                command.Connection = conn2;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = (int)reader["Id"];
+                    userDaInserire.Id = id;
+                }
+
+            }
         }
+
         public static User ReadUser(String Nickname)
         {
             SqlConnection conn = Connetti();
@@ -95,7 +113,7 @@ namespace DAL
         public static void UpdateUser(User userDaAggiornare, String nuovoNickname, String nuovaPassword)
         {
             SqlConnection conn = Connetti();
-
+            
             using (conn)
             {
                 conn.Open();

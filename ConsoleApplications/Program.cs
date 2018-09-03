@@ -44,9 +44,11 @@ namespace ConsoleApplications
             // READ TURKISH BATH (READ TEST)
             List<String> utentiTB = GestioneTurkishBaths.ReadTurkishBath();
             Console.WriteLine("Utenti in bagno turco: " + utentiTB[0]);
-            Console.ReadLine();
 
-
+            //ENQUEUE IN FINNISH SAUNA (CREATE TEST)
+            User supersaunista = new User("SuperSauna", "ilovesauna");
+            GestioneUsers.CreateUser(supersaunista);
+            GestioneFinnishSaunas.UpdateFinnishSauna(supersaunista);
 
         }
     }

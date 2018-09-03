@@ -41,8 +41,7 @@ namespace DAL
 
             return usersEnqueued;
         }
-
-        public static void UpdateFinnishSauna(User userToEnqueue)
+        public static void UpdateFinnishSauna(User userDaInserire)
         {
             SqlConnection conn = Connetti();
 
@@ -51,13 +50,12 @@ namespace DAL
                 conn.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Id", userToEnqueue.Id);
-                command.Parameters.AddWithValue("@UsersEnqueued", userToEnqueue.Nickname);
+                command.Parameters.AddWithValue("@IdUsersEnqueued", userDaInserire.Id);
+                command.Parameters.AddWithValue("@UsersEnqueued", userDaInserire.Nickname);
 
-                command.CommandText = "UPDATE FinnishSaunas SET UsersEnqueued = @UsersEnqueued " +
-                                      "WHERE Id = @Id";
-
+                command.CommandText = "INSERT INTO FinnishSaunas (IdUsersEnqueued, UsersEnqueued) VALUES (@IdUsersEnqueued, @UsersEnqueued)";
                 command.ExecuteNonQuery();
+
                 conn.Close();
             }
         }

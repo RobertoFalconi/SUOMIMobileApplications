@@ -15,9 +15,9 @@ namespace BLL
             return DAL.GestioneJacuzzis.ReadJacuzzi();
         }
 
-        public void UpdateJacuzzi(Jacuzzi jacuzziToUpdate)
+        public void UpdateJacuzzi(User userToEnqueue)
         {
-            DAL.GestioneJacuzzis.UpdateJacuzzi(jacuzziToUpdate);
+            DAL.GestioneJacuzzis.UpdateJacuzzi(userToEnqueue);
         }
     }
 }

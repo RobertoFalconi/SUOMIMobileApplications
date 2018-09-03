@@ -42,7 +42,7 @@ namespace DAL
             return usersEnqueued;
         }
 
-        public static void UpdateTurkishBath(TurkishBath turkishBathToUpdate)
+        public static void UpdateTurkishBath(User userDaInserire)
         {
             SqlConnection conn = Connetti();
 
@@ -51,13 +51,12 @@ namespace DAL
                 conn.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Id", turkishBathToUpdate.Id);
-                command.Parameters.AddWithValue("@UsersEnqueued", turkishBathToUpdate.UsersEnqueued);
+                command.Parameters.AddWithValue("@IdUsersEnqueued", userDaInserire.Id);
+                command.Parameters.AddWithValue("@UsersEnqueued", userDaInserire.Nickname);
 
-                command.CommandText = "UPDATE TurkishBaths SET UsersEnqueued = @UsersEnqueued " +
-                                      "WHERE Id = @Id";
-
+                command.CommandText = "INSERT INTO TurkishBaths (IdUsersEnqueued, UsersEnqueued) VALUES (@IdUsersEnqueued, @UsersEnqueued)";
                 command.ExecuteNonQuery();
+
                 conn.Close();
             }
         }

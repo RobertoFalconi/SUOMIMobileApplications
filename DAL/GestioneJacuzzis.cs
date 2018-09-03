@@ -42,7 +42,7 @@ namespace DAL
             return usersEnqueued;
         }
 
-        public static void UpdateJacuzzi(Jacuzzi jacuzziToUpdate)
+        public static void UpdateJacuzzi(User userDaInserire)
         {
             SqlConnection conn = Connetti();
 
@@ -51,13 +51,12 @@ namespace DAL
                 conn.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Id", jacuzziToUpdate.Id);
-                command.Parameters.AddWithValue("@UsersEnqueued", jacuzziToUpdate.UsersEnqueued);
+                command.Parameters.AddWithValue("@IdUsersEnqueued", userDaInserire.Id);
+                command.Parameters.AddWithValue("@UsersEnqueued", userDaInserire.Nickname);
 
-                command.CommandText = "UPDATE Jacuzzis SET UsersEnqueued = @UsersEnqueued " +
-                                      "WHERE Id = @Id";
-
+                command.CommandText = "INSERT INTO Jacuzzis (IdUsersEnqueued, UsersEnqueued) VALUES (@IdUsersEnqueued, @UsersEnqueued)";
                 command.ExecuteNonQuery();
+
                 conn.Close();
             }
         }

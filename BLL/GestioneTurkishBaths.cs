@@ -15,9 +15,9 @@ namespace BLL
             return DAL.GestioneTurkishBaths.ReadTurkishBath();
         }
 
-        public void UpdateTurkishBath(TurkishBath turkishBathToUpdate)
+        public void UpdateTurkishBath(User userToEnqueue)
         {
-            DAL.GestioneTurkishBaths.UpdateTurkishBath(turkishBathToUpdate);
+            DAL.GestioneTurkishBaths.UpdateTurkishBath(userToEnqueue);
         }
     }
 }

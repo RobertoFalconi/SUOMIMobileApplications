@@ -42,7 +42,7 @@ namespace DAL
             return usersEnqueued;
         }
 
-        public static void UpdateKneipp(Kneipp kneippToUpdate)
+        public static void UpdateKneipp(User userDaInserire)
         {
             SqlConnection conn = Connetti();
 
@@ -51,13 +51,12 @@ namespace DAL
                 conn.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Id", kneippToUpdate.Id);
-                command.Parameters.AddWithValue("@UsersEnqueued", kneippToUpdate.UsersEnqueued);
+                command.Parameters.AddWithValue("@IdUsersEnqueued", userDaInserire.Id);
+                command.Parameters.AddWithValue("@UsersEnqueued", userDaInserire.Nickname);
 
-                command.CommandText = "UPDATE Kneipps SET UsersEnqueued = @UsersEnqueued " +
-                                      "WHERE Id = @Id";
-
+                command.CommandText = "INSERT INTO Kneipps (IdUsersEnqueued, UsersEnqueued) VALUES (@IdUsersEnqueued, @UsersEnqueued)";
                 command.ExecuteNonQuery();
+
                 conn.Close();
             }
         }
