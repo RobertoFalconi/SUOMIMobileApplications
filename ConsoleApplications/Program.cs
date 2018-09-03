@@ -48,38 +48,54 @@ namespace ConsoleApplications
             // SIGN IN AND ENQUEUE IN FINNISH SAUNA (CREATE TEST)
             User supersaunista = new User("SuperSauna", "ilovesauna");
             GestioneUsers.CreateUser(supersaunista);
-            GestioneFinnishSaunas.UpdateFinnishSauna(supersaunista);
+            GestioneFinnishSaunas.EnqueueInFinnishSauna(supersaunista);
 
             // SIGN IN AND ENQUEUE IN TURKISH BATH (CREATE TEST)
             User utenteasciutto = new User("SonoAsciutto", "ilovetb");
             GestioneUsers.CreateUser(utenteasciutto);
-            GestioneTurkishBaths.UpdateTurkishBath(utenteasciutto);
+            GestioneTurkishBaths.EnqueueInTurkishBath(utenteasciutto);
 
             // SIGN IN AND ENQUEUE IN JACUZZI (CREATE TEST)
             User utentepigro = new User("SonoPigro", "ilovehydro");
             GestioneUsers.CreateUser(utentepigro);
-            GestioneJacuzzis.UpdateJacuzzi(utentepigro);
+            GestioneJacuzzis.EnqueueInJacuzzi(utentepigro);
 
             // SIGN IN AND ENQUEUE IN KNEIPP (CREATE TEST)
             User utenteconcattivacircolazione = new User("HoUnaCattivaCircolazione", "ilovekneipp");
             GestioneUsers.CreateUser(utenteconcattivacircolazione);
-            GestioneKneipps.UpdateKneipp(utenteconcattivacircolazione);
+            GestioneKneipps.EnqueueInKneipp(utenteconcattivacircolazione);
 
             // LOGIN AND ENQUEUE IN FINNISH SAUNA (CREATE TEST)
             User supersaunista2 = GestioneUsers.ReadUser("SuperSauna");
-            GestioneFinnishSaunas.UpdateFinnishSauna(supersaunista2);
+            GestioneFinnishSaunas.EnqueueInFinnishSauna(supersaunista2);
 
             // LOGIN AND ENQUEUE IN TURKISH BATH (CREATE TEST)
             User utenteasciutto2 = GestioneUsers.ReadUser("SonoAsciutto");
-            GestioneTurkishBaths.UpdateTurkishBath(utenteasciutto2);
+            GestioneTurkishBaths.EnqueueInTurkishBath(utenteasciutto2);
 
             // LOGIN AND ENQUEUE IN JACUZZI (CREATE TEST)
             User utentepigro2 = GestioneUsers.ReadUser("SonoPigro");
-            GestioneJacuzzis.UpdateJacuzzi(utentepigro2);
+            GestioneJacuzzis.EnqueueInJacuzzi(utentepigro2);
 
             // LOGIN AND ENQUEUE IN KNEIPP (CREATE TEST)
             User utenteconcattivacircolazione2 = GestioneUsers.ReadUser("HoUnaCattivaCircolazione");
-            GestioneKneipps.UpdateKneipp(utenteconcattivacircolazione2);
+            GestioneKneipps.EnqueueInKneipp(utenteconcattivacircolazione2);
+
+            // DEQUEUE FROM FINNISH SAUNA (DELETE TEST)
+            User utentedatogliere1 = GestioneUsers.ReadUser("SonoPigro");
+            GestioneFinnishSaunas.DequeueFromFinnishSauna(utentedatogliere1);
+
+            // DEQUEUE FROM TURKISH BATH (DELETE TEST)
+            User utentedatogliere2 = GestioneUsers.ReadUser("SonoAsciutto");
+            GestioneTurkishBaths.DequeueFromTurkishBath(utentedatogliere2);
+
+            // DEQUEUE FROM JACUZZI (DELETE TEST)
+            User utentedatogliere3 = GestioneUsers.ReadUser("SonoPigro");
+            GestioneJacuzzis.DequeueFromJacuzzi(utentedatogliere3);
+
+            // DEQUEUE FROM KNEIPP (DELETE TEST)
+            User utentedatogliere4 = GestioneUsers.ReadUser("HoUnaCattivaCircolazione");
+            GestioneKneipps.DequeueFromKneipp(utentedatogliere4);
 
         }
     }

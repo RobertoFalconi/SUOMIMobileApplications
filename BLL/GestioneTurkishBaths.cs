@@ -15,9 +15,14 @@ namespace BLL
             return DAL.GestioneTurkishBaths.ReadTurkishBath();
         }
 
-        public static void UpdateTurkishBath(User userToEnqueue)
+        public static void EnqueueInTurkishBath(User userToEnqueue)
         {
-            DAL.GestioneTurkishBaths.UpdateTurkishBath(userToEnqueue);
+            DAL.GestioneTurkishBaths.EnqueueInTurkishBath(userToEnqueue);
+        }
+
+        public static void DequeueFromTurkishBath(User userToDequeue)
+        {
+            DAL.GestioneTurkishBaths.DequeueFromTurkishBath(userToDequeue);
         }
     }
 }

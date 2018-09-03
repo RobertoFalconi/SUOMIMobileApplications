@@ -15,9 +15,15 @@ namespace BLL
             return DAL.GestioneFinnishSaunas.ReadFinnishSauna();
         }
 
-        public static void UpdateFinnishSauna(User userToEnqueue)
+        public static void EnqueueInFinnishSauna(User userToEnqueue)
         {
-            DAL.GestioneFinnishSaunas.UpdateFinnishSauna(userToEnqueue);
+            DAL.GestioneFinnishSaunas.EnqueueInFinnishSauna(userToEnqueue);
         }
+
+        public static void DequeueFromFinnishSauna(User userToDequeue)
+        {
+            DAL.GestioneFinnishSaunas.DequeueFromFinnishSauna(userToDequeue);
+        }
+
     }
 }
