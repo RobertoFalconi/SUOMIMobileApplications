@@ -10,9 +10,9 @@ namespace BLL
 {
     public class GestioneKneipps
     {
-        public Kneipp ReadKneipp(int id)
+        public static List<String> ReadKneipp()
         {
-            return DAL.GestioneKneipps.ReadKneipp(id);
+            return DAL.GestioneKneipps.ReadKneipp();
         }
 
         public void UpdateKneipp(Kneipp kneippToUpdate)

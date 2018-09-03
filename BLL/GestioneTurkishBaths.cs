@@ -10,9 +10,9 @@ namespace BLL
 {
     public class GestioneTurkishBaths
     {
-        public TurkishBath ReadTurkishBath(int id)
+        public static List<String> ReadTurkishBath()
         {
-            return DAL.GestioneTurkishBaths.ReadTurkishBath(id);
+            return DAL.GestioneTurkishBaths.ReadTurkishBath();
         }
 
         public void UpdateTurkishBath(TurkishBath turkishBathToUpdate)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
+using BLL;
 
 namespace ConsoleApplications
 {
@@ -10,12 +12,42 @@ namespace ConsoleApplications
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            // SIGN IN (CREATE TEST)
+            User nuovoUser = new User("Topolino", "123");
+            GestioneUsers.CreateUser(nuovoUser);
+
+            // LOGIN (READ TEST)
+            User utenteCorrente = GestioneUsers.ReadUser(nuovoUser.Nickname);
+            Console.WriteLine(utenteCorrente.Id + utenteCorrente.Nickname + utenteCorrente.Password);
+
+            // PROFILE EDIT (UPDATE TEST)
+            GestioneUsers.UpdateUser(utenteCorrente, "Paperino", "123");
+            utenteCorrente = GestioneUsers.ReadUser(utenteCorrente.Id);
+            Console.WriteLine(utenteCorrente.Id + utenteCorrente.Nickname + utenteCorrente.Password);
+
+            // ACCOUNT DELETION (DELETE TEST)
+            GestioneUsers.DeleteUser(utenteCorrente);
+
+            // READ FINNISHSAUNA (READ TEST)
+            List<String> utentiFS = GestioneFinnishSaunas.ReadFinnishSauna();
+            Console.WriteLine("Utenti in sauna: " + utentiFS[1]);
+
+            // READ JACUZZI (READ TEST)
+            List<String> utentiJ = GestioneJacuzzis.ReadJacuzzi();
+            Console.WriteLine("Utenti in jacuzzi: " + utentiJ[0]);
+
+            // READ KNEIPP (READ TEST)
+            List<String> utentiK = GestioneKneipps.ReadKneipp();
+            Console.WriteLine("Utenti in kneipp: " + utentiK[0]);
+
+            // READ TURKISH BATH (READ TEST)
+            List<String> utentiTB = GestioneTurkishBaths.ReadTurkishBath();
+            Console.WriteLine("Utenti in bagno turco: " + utentiTB[0]);
+            Console.ReadLine();
+
+
+
         }
     }
 }

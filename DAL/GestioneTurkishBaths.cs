@@ -12,17 +12,17 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI\\SQLEXPRESS;Initial Catalog=AndroidSUOMI;Integrated Security=True";
+            string connectionString = "Data Source=AC-RFALCONI;Initial Catalog=AndroidSUOMI;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
 
-        public static TurkishBath ReadTurkishBath(int id)
+        public static List<String> ReadTurkishBath()
         {
             SqlConnection conn = Connetti();
 
-            string query = "SELECT * FROM TurkishBaths WHERE TurkishBaths.Id = '" + id + "'";
+            string query = "SELECT * FROM TurkishBaths";
 
-            TurkishBath turkishBathToRead = null;
+            List<String> usersEnqueued = new List<String>();
 
             SqlDataReader reader;
             using (conn)
@@ -33,16 +33,13 @@ namespace DAL
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    int id_ret = (int)reader["Id"];
-                    List<User> usersEnqueued = (List<User>)reader["UsersEnqueued"];
-
-                    turkishBathToRead = new TurkishBath(id_ret, usersEnqueued);
+                    usersEnqueued.Add(reader["UsersEnqueued"].ToString());
                 }
                 reader.Close();
                 conn.Close();
             }
 
-            return turkishBathToRead;
+            return usersEnqueued;
         }
 
         public static void UpdateTurkishBath(TurkishBath turkishBathToUpdate)

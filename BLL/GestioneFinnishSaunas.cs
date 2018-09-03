@@ -10,14 +10,14 @@ namespace BLL
 {
     public class GestioneFinnishSaunas
     {
-        public FinnishSauna ReadFinnishSauna(int id)
+        public static List<String> ReadFinnishSauna()
         {
-            return DAL.GestioneFinnishSaunas.ReadFinnishSauna(id);
+            return DAL.GestioneFinnishSaunas.ReadFinnishSauna();
         }
 
-        public void UpdateFinnishSauna(FinnishSauna finnishSaunaToUpdate)
+        public static void UpdateFinnishSauna(User userToEnqueue)
         {
-            DAL.GestioneFinnishSaunas.UpdateFinnishSauna(finnishSaunaToUpdate);
+            DAL.GestioneFinnishSaunas.UpdateFinnishSauna(userToEnqueue);
         }
     }
 }

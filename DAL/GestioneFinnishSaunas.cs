@@ -12,17 +12,17 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI\\SQLEXPRESS;Initial Catalog=AndroidSUOMI;Integrated Security=True";
+            string connectionString = "Data Source=AC-RFALCONI;Initial Catalog=AndroidSUOMI;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
 
-        public static FinnishSauna ReadFinnishSauna(int id)
+        public static List<String> ReadFinnishSauna()
         {
             SqlConnection conn = Connetti();
 
-            string query = "SELECT * FROM FinnishSaunas WHERE FinnishSaunas.Id = '" + id + "'";
+            string query = "SELECT * FROM FinnishSaunas";
 
-            FinnishSauna finnishSaunaToRead = null;
+            List<String> usersEnqueued = new List<String>();
 
             SqlDataReader reader;
             using (conn)
@@ -33,19 +33,16 @@ namespace DAL
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    int id_ret = (int)reader["Id"];
-                    List<User> usersEnqueued = (List<User>)reader["UsersEnqueued"];
-
-                    finnishSaunaToRead = new FinnishSauna(id_ret, usersEnqueued);
+                    usersEnqueued.Add(reader["UsersEnqueued"].ToString());
                 }
                 reader.Close();
                 conn.Close();
             }
 
-            return finnishSaunaToRead;
+            return usersEnqueued;
         }
 
-        public static void UpdateFinnishSauna(FinnishSauna finnishSaunaToUpdate)
+        public static void UpdateFinnishSauna(User userToEnqueue)
         {
             SqlConnection conn = Connetti();
 
@@ -54,8 +51,8 @@ namespace DAL
                 conn.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Id", finnishSaunaToUpdate.Id);
-                command.Parameters.AddWithValue("@UsersEnqueued", finnishSaunaToUpdate.UsersEnqueued);
+                command.Parameters.AddWithValue("@Id", userToEnqueue.Id);
+                command.Parameters.AddWithValue("@UsersEnqueued", userToEnqueue.Nickname);
 
                 command.CommandText = "UPDATE FinnishSaunas SET UsersEnqueued = @UsersEnqueued " +
                                       "WHERE Id = @Id";

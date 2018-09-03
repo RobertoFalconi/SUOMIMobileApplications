@@ -25,14 +25,14 @@ namespace BLL
             return DAL.GestioneUsers.ReadUser(id);
         }
 
-        public static void UpdateUser(User userDaAggiornare)
+        public static void UpdateUser(User userDaAggiornare, String nuovoNickname, String nuovaPassword)
         {
-            DAL.GestioneUsers.UpdateUser(userDaAggiornare);
+            DAL.GestioneUsers.UpdateUser(userDaAggiornare, nuovoNickname, nuovaPassword);
         }
 
         public static void DeleteUser(User userDaRimuovere)
         {
-            DAL.GestioneUsers.UpdateUser(userDaRimuovere);
+            DAL.GestioneUsers.DeleteUser(userDaRimuovere);
         }
 
     }

@@ -12,7 +12,7 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI\\SQLEXPRESS;Initial Catalog=AndroidSUOMI;Integrated Security=True";
+            string connectionString = "Data Source=AC-RFALCONI;Initial Catalog=AndroidSUOMI;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
         public static void CreateUser(User userDaInserire)
@@ -92,7 +92,7 @@ namespace DAL
             return userDaRestituire;
         }
 
-        public static void UpdateUser(User userDaAggiornare)
+        public static void UpdateUser(User userDaAggiornare, String nuovoNickname, String nuovaPassword)
         {
             SqlConnection conn = Connetti();
 
@@ -102,8 +102,8 @@ namespace DAL
                 SqlCommand command = new SqlCommand();
                 command.Connection = conn;
                 command.Parameters.AddWithValue("@Id", userDaAggiornare.Id);
-                command.Parameters.AddWithValue("@Nickname", userDaAggiornare.Nickname);
-                command.Parameters.AddWithValue("@Password", userDaAggiornare.Password);
+                command.Parameters.AddWithValue("@Nickname", nuovoNickname);
+                command.Parameters.AddWithValue("@Password", nuovaPassword);
 
                 command.CommandText = "UPDATE Users SET Nickname = @Nickname, Password = @Password " +
                                       "WHERE Id = @Id";
