@@ -10,6 +10,14 @@ namespace BLL
 {
     public class GestioneJacuzzis
     {
+        public Jacuzzi ReadJacuzzi(int id)
+        {
+            return DAL.GestioneJacuzzis.ReadJacuzzi(id);
+        }
 
+        public void UpdateJacuzzi(Jacuzzi jacuzziToUpdate)
+        {
+            DAL.GestioneJacuzzis.UpdateJacuzzi(jacuzziToUpdate);
+        }
     }
 }

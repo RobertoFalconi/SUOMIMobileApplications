@@ -5,10 +5,12 @@ namespace BE
 {
     public class Jacuzzi
     {
+        public int Id { get; set; }
         public List<User> UsersEnqueued { get; set; }
 
-        public Jacuzzi(List<User> usersEnqueued)
+        public Jacuzzi(int id, List<User> usersEnqueued)
         {
+            this.Id = id;
             this.UsersEnqueued = usersEnqueued;
         }
     }

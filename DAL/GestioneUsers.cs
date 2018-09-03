@@ -12,10 +12,10 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI\\SQLEXPRESS;Initial Catalog=SUOMI;Integrated Security=True";
+            string connectionString = "Data Source=AC-RFALCONI\\SQLEXPRESS;Initial Catalog=AndroidSUOMI;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
-        public static void InsertUser(User userDaInserire)
+        public static void CreateUser(User userDaInserire)
         {
             SqlConnection conn = Connetti();
 
@@ -33,7 +33,7 @@ namespace DAL
                 conn.Close();
             }
         }
-        public static User GetUser(String Nickname)
+        public static User ReadUser(String Nickname)
         {
             SqlConnection conn = Connetti();
 
@@ -62,7 +62,7 @@ namespace DAL
 
             return userDaRestituire;
         }
-        public static User GetUser(int id)
+        public static User ReadUser(int id)
         {
             SqlConnection conn = Connetti();
 
@@ -91,5 +91,47 @@ namespace DAL
 
             return userDaRestituire;
         }
+
+        public static void UpdateUser(User userDaAggiornare)
+        {
+            SqlConnection conn = Connetti();
+
+            using (conn)
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.Parameters.AddWithValue("@Id", userDaAggiornare.Id);
+                command.Parameters.AddWithValue("@Nickname", userDaAggiornare.Nickname);
+                command.Parameters.AddWithValue("@Password", userDaAggiornare.Password);
+
+                command.CommandText = "UPDATE Users SET Nickname = @Nickname, Password = @Password " +
+                                      "WHERE Id = @Id";
+
+                command.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+
+        public static void DeleteUser(User userDaRimuovere)
+        {
+            SqlConnection conn = Connetti();
+
+            using (conn)
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.Parameters.AddWithValue("@Id", userDaRimuovere.Id);
+
+                command.CommandText = "DELETE Users WHERE Id = @Id";
+
+                command.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
     }
 }

@@ -10,17 +10,30 @@ namespace BLL
 {
     public class GestioneUsers
     {
-        public static void InsertUser(User userDaInserire)
+        public static void CreateUser(User userDaInserire)
         {
-            DAL.GestioneUsers.InsertUser(userDaInserire);
+            DAL.GestioneUsers.CreateUser(userDaInserire);
         }
-        public static User GetUser(String nickname)
+
+        public static User ReadUser(String nickname)
         {
-            return DAL.GestioneUsers.GetUser(nickname);
+            return DAL.GestioneUsers.ReadUser(nickname);
         }
-        public static User GetUser(int id)
+
+        public static User ReadUser(int id)
         {
-            return DAL.GestioneUsers.GetUser(id);
+            return DAL.GestioneUsers.ReadUser(id);
         }
+
+        public static void UpdateUser(User userDaAggiornare)
+        {
+            DAL.GestioneUsers.UpdateUser(userDaAggiornare);
+        }
+
+        public static void DeleteUser(User userDaRimuovere)
+        {
+            DAL.GestioneUsers.UpdateUser(userDaRimuovere);
+        }
+
     }
 }

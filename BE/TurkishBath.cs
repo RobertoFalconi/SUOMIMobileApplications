@@ -4,10 +4,12 @@ namespace BE
 {
     public class TurkishBath
     {
+        public int Id { get; set; }
         public List<User> UsersEnqueued { get; set; }
 
-        public TurkishBath(List<User> usersEnqueued)
+        public TurkishBath(int id, List<User> usersEnqueued)
         {
+            this.Id = id;
             this.UsersEnqueued = usersEnqueued;
         }
     }
