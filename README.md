@@ -1,4 +1,4 @@
-# SUOMI
+# Android SUOMI
 Modern, fully-native, Android App. Developed in Xamarin.Android using Visual Studio.
 Smart guide for your spa experience.
 
