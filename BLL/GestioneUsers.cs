@@ -35,5 +35,10 @@ namespace BLL
             DAL.GestioneUsers.DeleteUser(userDaRimuovere);
         }
 
+        public static void LogOutUser(User userDaSloggare)
+        {
+            DAL.GestioneUsers.LogOutUser(userDaSloggare);
+        }
+
     }
 }

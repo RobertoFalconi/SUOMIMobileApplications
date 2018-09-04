@@ -151,5 +151,12 @@ namespace DAL
             }
         }
 
+        public static void LogOutUser(User userDaSloggare)
+        {
+            userDaSloggare.Id = 0;
+            userDaSloggare.Nickname = null;
+            userDaSloggare.Password = null;
+        }
+
     }
 }
