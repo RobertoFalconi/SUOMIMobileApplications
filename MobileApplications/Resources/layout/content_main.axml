@@ -7,21 +7,35 @@
 	android:layout_height="match_parent"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	tools:showIn="@layout/app_bar_main">
-	<Button
-		android:text="TEST"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/TestButton"
+
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
 		android:layout_centerHorizontal="true"
 		android:layout_centerVertical="true"
-	 />
+		android:id="@+id/Buttons">
+		<Button
+			android:text="LOG IN"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/LoginButton"
+			/>
+		<Button
+			android:text="SIGN UP"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/SignupButton"
+			/>
+	</LinearLayout>
+
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
-		android:text="Test"
+		android:text="Welcome to SUOMI!"
 		android:id="@+id/TestText"
 		android:layout_centerHorizontal="true"
-		android:layout_below="@id/TestButton"
+		android:layout_above="@id/Buttons"
 	/>
 </RelativeLayout>

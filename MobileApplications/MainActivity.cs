@@ -29,8 +29,11 @@ namespace MobileApplications
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-            Button button = FindViewById<Button>(Resource.Id.TestButton);
-            button.Click += TestOnClick;
+            //Button button = FindViewById<Button>(Resource.Id.TestButton);
+            //button.Click += TestOnClick;
+
+            Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
+            loginButton.Click += RedirectToLoginOnClick;
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
@@ -41,11 +44,16 @@ namespace MobileApplications
             navigationView.SetNavigationItemSelectedListener(this);
         }
 
-        private void TestOnClick(object sender, EventArgs e)
+        //private void TestOnClick(object sender, EventArgs e)
+        //{
+        //    TextView test = FindViewById<TextView>(Resource.Id.TestText);
+        //    List<string> tests = new List<string>() { "Test 1", "Test 2", "Test 3", "Test 4", "Test 5" };
+        //    test.Text = tests[rnd.Next(tests.Count)];
+        //}
+
+        private void RedirectToLoginOnClick(object sender, EventArgs e)
         {
-            TextView test = FindViewById<TextView>(Resource.Id.TestText);
-            List<string> tests = new List<string>() { "Test 1", "Test 2", "Test 3", "Test 4", "Test 5" };
-            test.Text = tests[rnd.Next(tests.Count)];
+            StartActivity(typeof(LoginActivity));
         }
 
         public override void OnBackPressed()
@@ -93,7 +101,7 @@ namespace MobileApplications
             {
                 // Handle the FinnishSauna action
                 // var intent = new Intent(this, typeof(NewPageActivity));
-                StartActivity(typeof(NewPageActivity));
+                StartActivity(typeof(FinnishSaunaActivity));
             }
             else if (id == Resource.Id.TurkishBath)
             {

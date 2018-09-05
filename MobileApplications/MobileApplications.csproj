@@ -56,9 +56,10 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginActivity.cs" />
     <Compile Include="JacuzzisActivity.cs" />
     <Compile Include="KneippsActivity.cs" />
-    <Compile Include="NewPageActivity.cs" />
+    <Compile Include="FinnishSaunaActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

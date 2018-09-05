@@ -12,7 +12,7 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI;Initial Catalog=AndroidSUOMI;Integrated Security=True";
+            string connectionString = "Data Source=localhost;Initial Catalog=AndroidSUOMI;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
         public static void CreateUser(User userDaInserire)

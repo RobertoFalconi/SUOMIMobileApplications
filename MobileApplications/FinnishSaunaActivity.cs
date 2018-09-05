@@ -14,8 +14,8 @@ using Android.Widget;
 
 namespace MobileApplications
 {
-    [Activity(Label = "Example", Theme = "@style/AppTheme.NoActionBar")]
-    public class NewPageActivity : AppCompatActivity
+    [Activity(Label = "Finnish Sauna", Theme = "@style/AppTheme.NoActionBar")]
+    public class FinnishSaunaActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

@@ -7,6 +7,25 @@
 	android:layout_height="match_parent"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	tools:showIn="@layout/app_bar_main">
+	
+	<Button
+		android:text="Log in!"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/LogInButton"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+	 />
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_centerInParent="true"
+		android:id="@+id/NicknameTxt"
+		android:inputType="text"
+		android:layout_above="@id/LogInButton"
+	/>
+	
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -17,21 +36,5 @@
 		android:layout_above="@id/NicknameTxt"
 		
 	/>
-	<EditText
-		android:id="@+id/plain_text_input"
-		android:layout_height="wrap_content"
-		android:layout_width="match_parent"
-		android:layout_centerInParent="true"
-		android:id="@+id/NicknameTxt"
-		android:inputType="text"
-		android:layout_above="@id/LogInButton"
-	/>
-	<Button
-		android:text="Log in!"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/LogInButton"
-		android:layout_centerHorizontal="true"
-		android:layout_centerVertical="true"
-	 />
+
 </RelativeLayout>
