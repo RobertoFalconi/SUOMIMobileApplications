@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:showIn="@layout/app_bar_main">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+	<ScrollView 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+		<LinearLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<TextView
+				android:text="Turkish Baths"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="12dp"
+				android:textStyle="bold"
+				android:id="@+id/Title" />
+			<TextView
+				android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus justo eu magna aliquam pharetra. Aliquam ornare pharetra magna, quis condimentum quam tempor nec. Nulla fringilla tincidunt metus. Nunc auctor odio mauris, et elementum felis sollicitudin sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer dui sem, egestas eu eleifend vel, facilisis et elit. Ut felis lorem, porttitor ut sapien pulvinar, aliquam euismod velit.
+
+Vestibulum blandit convallis egestas. Praesent at nisi venenatis, finibus diam a, finibus nisi. Curabitur et scelerisque turpis. Ut in metus nec felis iaculis fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent varius, neque ac convallis accumsan, dui massa finibus massa, quis molestie justo libero a metus. Donec bibendum lorem id nisl suscipit posuere. Suspendisse potenti. Nulla eget est eget urna finibus tristique vitae non nibh. Fusce laoreet, ipsum non fermentum viverra, nunc lorem tempus neque, ac convallis ex sem id justo."
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/PageText"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+				android:layout_marginBottom="12dp"
+			/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

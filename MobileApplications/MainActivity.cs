@@ -97,15 +97,15 @@ namespace MobileApplications
             }
             else if (id == Resource.Id.TurkishBath)
             {
-
+                StartActivity(typeof(TurkishBathsActivity));
             }
             else if (id == Resource.Id.Kneipp)
             {
-
+                StartActivity(typeof(KneippsActivity));
             }
             else if (id == Resource.Id.Jacuzzi)
             {
-
+                StartActivity(typeof(JacuzzisActivity));
             }
             else if (id == Resource.Id.nav_share)
             {
