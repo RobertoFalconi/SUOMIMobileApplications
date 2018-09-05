@@ -22,5 +22,6 @@
 		android:text="Test"
 		android:id="@+id/TestText"
 		android:layout_centerHorizontal="true"
-		android:layout_below="@id/TestButton" />
+		android:layout_below="@id/TestButton"
+	/>
 </RelativeLayout>
