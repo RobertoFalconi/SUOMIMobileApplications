@@ -35,6 +35,17 @@ namespace BLL
             DAL.GestioneUsers.DeleteUser(userDaRimuovere);
         }
 
+        public static void SignInUser(string nickname, string password) 
+        {
+            User userDaRegistrare = new User(nickname, password);
+            CreateUser(userDaRegistrare);
+        }
+
+        public static void LogInUser(string nickname, string password)
+        {
+            User userDaLoggare = ReadUser(nickname);
+        }
+
         public static void LogOutUser(User userDaSloggare)
         {
             DAL.GestioneUsers.LogOutUser(userDaSloggare);
