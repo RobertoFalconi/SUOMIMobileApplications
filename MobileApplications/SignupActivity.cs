@@ -35,7 +35,7 @@ namespace MobileApplications
             EditText Password = FindViewById<EditText>(Resource.Id.SignupPasswordTxt);
             string nickname = Nickname.Text;
             string password = Password.Text;
-            BLL.GestioneUsers.SignInUser(nickname, password);
+            BLL.GestioneUsers.SigninUser(nickname, password);
 
             StartActivity(typeof(MainActivity));
 

@@ -7,4 +7,12 @@
 	android:layout_height="match_parent"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	tools:showIn="@layout/app_bar_main">
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:text="Welcome"
+		android:id="@+id/WelcomeUser"
+		android:layout_centerHorizontal="true"
+	/>
 </RelativeLayout>
