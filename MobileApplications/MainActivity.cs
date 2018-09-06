@@ -32,8 +32,8 @@ namespace MobileApplications
             //Button button = FindViewById<Button>(Resource.Id.TestButton);
             //button.Click += TestOnClick;
 
-            Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
-            loginButton.Click += RedirectToLoginOnClick;
+            //Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
+            //loginButton.Click += RedirectToLoginOnClick;
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);

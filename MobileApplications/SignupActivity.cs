@@ -36,6 +36,9 @@ namespace MobileApplications
             string nickname = Nickname.Text;
             string password = Password.Text;
             BLL.GestioneUsers.SignInUser(nickname, password);
+
+            StartActivity(typeof(MainActivity));
+
         }
 
     }
