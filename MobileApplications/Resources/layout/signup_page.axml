@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	app:layout_behavior="@string/appbar_scrolling_view_behavior"
-	tools:showIn="@layout/app_bar_main">
-	
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 	<Button
-		android:text="Log in!"
+		android:text="Sign up!"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/LoginButton"
+		android:id="@+id/SignupButton"
 		android:layout_centerHorizontal="true"
 		android:layout_centerVertical="true"
 		
@@ -21,9 +16,9 @@
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
-		android:id="@+id/LoginPasswordTxt"
+		android:id="@+id/SignupPasswordTxt"
 		android:inputType="text"
-		android:layout_above="@id/LoginButton"
+		android:layout_above="@id/SignupButton"
 	/>
 	
 	<TextView
@@ -31,27 +26,26 @@
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
 		android:text="Password"
-		android:id="@+id/LoginPasswordLabel"
+		android:id="@+id/SignupPasswordLabel"
 		android:layout_centerHorizontal="true"
-		android:layout_above="@id/LoginPasswordTxt"
+		android:layout_above="@id/SignupPasswordTxt"
 	/>
 	
 	<EditText
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
-		android:id="@+id/LoginNicknameTxt"
+		android:id="@+id/SignupNicknameTxt"
 		android:inputType="text"
-		android:layout_above="@id/LoginPasswordLabel"
+		android:layout_above="@id/SignupPasswordLabel"
 	/>
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
 		android:text="Nickname"
-		android:id="@+id/LoginNicknameLabel"
+		android:id="@+id/SignupNicknameLabel"
 		android:layout_centerHorizontal="true"
-		android:layout_above="@id/LoginNicknameTxt"
+		android:layout_above="@id/SignupNicknameTxt"
 	/>
-
 </RelativeLayout>

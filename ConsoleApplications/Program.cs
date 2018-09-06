@@ -98,19 +98,19 @@ namespace ConsoleApplications
             //GestioneKneipps.DequeueFromKneipp(utentedatogliere4);
 
             // ESEMPIO COMPLETO: SIGN IN, LOGOUT, LOGIN, LOGOUT, LOGIN, DELETION
-            User nuovoUtente = new User("SonoUnUtente", "1234");
+            User nuovoUtente = new User("SonoUnUtente!", "1234");
 
             GestioneUsers.CreateUser(nuovoUtente);
 
             GestioneUsers.LogOutUser(nuovoUtente);
             
-            User vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente");
+            User vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!");
 
             GestioneUsers.LogOutUser(vecchioUtente);
 
-            vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente");
+            vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!");
 
-            GestioneUsers.DeleteUser(vecchioUtente);
+            //GestioneUsers.DeleteUser(vecchioUtente);
 
             // SIGN IN = new User("nickname","password") + CreateUser
             // LOGIN = ReadUser
