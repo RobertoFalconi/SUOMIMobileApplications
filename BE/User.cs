@@ -11,6 +11,7 @@ namespace BE
         public int Id { get; set; }
         public string Nickname { get; set; }
         public string Password { get; set; }
+        public static User CurrentUser { get; set; }
 
         public User()
         {

@@ -123,9 +123,10 @@ namespace MobileApplications
             {
 
             }
-            else if (id == Resource.Id.nav_send)
+            else if (id == Resource.Id.logout_button)
             {
-
+                BLL.GestioneUsers.LogoutUser(BE.User.CurrentUser);
+                StartActivity(typeof(FirstPageActivity));
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);

@@ -102,11 +102,11 @@ namespace ConsoleApplications
 
             GestioneUsers.CreateUser(nuovoUtente);
 
-            GestioneUsers.LogOutUser(nuovoUtente);
+            GestioneUsers.LogoutUser(nuovoUtente);
             
             User vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!");
 
-            GestioneUsers.LogOutUser(vecchioUtente);
+            GestioneUsers.LogoutUser(vecchioUtente);
 
             vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!");
 

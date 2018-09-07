@@ -46,7 +46,7 @@ namespace BLL
             return ReadUser(nickname);
         }
 
-        public static void LogOutUser(User userDaSloggare)
+        public static void LogoutUser(User userDaSloggare)
         {
             DAL.GestioneUsers.LogOutUser(userDaSloggare);
         }

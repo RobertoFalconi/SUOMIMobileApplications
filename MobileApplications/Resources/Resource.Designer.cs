@@ -2690,6 +2690,9 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
+			// aapt resource value: 0x7f0800c9
+			public const int logout_button = 2131230921;
+			
 			// aapt resource value: 0x7f0800c3
 			public const int masked = 2131230915;
 			
@@ -2707,9 +2710,6 @@ namespace MobileApplications
 			
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
-			
-			// aapt resource value: 0x7f0800c9
-			public const int nav_send = 2131230921;
 			
 			// aapt resource value: 0x7f0800c8
 			public const int nav_share = 2131230920;

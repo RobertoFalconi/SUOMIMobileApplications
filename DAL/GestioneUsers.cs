@@ -77,7 +77,7 @@ namespace DAL
                 reader.Close();
                 conn.Close();
             }
-
+            BE.User.CurrentUser = userDaRestituire;
             return userDaRestituire;
         }
         public static User ReadUser(int id)
@@ -153,6 +153,7 @@ namespace DAL
 
         public static void LogOutUser(User userDaSloggare)
         {
+            User.CurrentUser = null;
             userDaSloggare.Id = 0;
             userDaSloggare.Nickname = null;
             userDaSloggare.Password = null;
