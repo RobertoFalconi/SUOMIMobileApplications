@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:showIn="@layout/app_bar_main">
+	
+	<android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+			<TextView
+				android:text="Profile Settings"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="12dp"
+				android:textStyle="bold"
+				android:id="@+id/TitleProfile" 
+			/>
+			<TextView
+				android:text="Change Nickname"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/ChangeNicknameLbl"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+				android:layout_marginBottom="12dp"
+			/>
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_centerInParent="true"
+				android:id="@+id/ChangeNicknameTxt"
+				android:inputType="text"
+			/>
+			<TextView
+				android:text="Change Password"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/ChangePasswordLbl"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+				android:layout_marginBottom="12dp"
+			/>
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_centerInParent="true"
+				android:id="@+id/ChangePasswordTxt"
+				android:inputType="text"
+			/>
+			<Button
+				android:text="Update!"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/UpdateButton"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true"
+			/>
+		</LinearLayout>

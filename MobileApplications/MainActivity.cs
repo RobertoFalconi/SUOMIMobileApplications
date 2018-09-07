@@ -84,7 +84,7 @@ namespace MobileApplications
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
-                return true;
+                StartActivity(typeof(ProfileActivity));
             }
 
             return base.OnOptionsItemSelected(item);
