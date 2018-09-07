@@ -38,6 +38,7 @@ namespace BLL
         public static void SigninUser(string nickname, string password) 
         {
             User userDaRegistrare = new User(nickname, password);
+            User.CurrentUser = userDaRegistrare;
             CreateUser(userDaRegistrare);
         }
 

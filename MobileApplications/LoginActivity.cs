@@ -37,9 +37,8 @@ namespace MobileApplications
             string nickname = Nickname.Text;
             string password = Password.Text;
             User utenteCorrente = BLL.GestioneUsers.LoginUser(nickname, password);
-            Intent utenteCorrenteIntent = new Intent(BaseContext, typeof(MainActivity));
-            utenteCorrenteIntent.PutExtra("UtenteCorrente", utenteCorrente.Nickname);
-            StartActivity(utenteCorrenteIntent);
+            
+            StartActivity(typeof(MainActivity));
 
         }
     }

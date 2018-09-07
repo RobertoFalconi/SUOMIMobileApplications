@@ -44,8 +44,14 @@ namespace MobileApplications
             navigationView.SetNavigationItemSelectedListener(this);
 
             TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
-            string userNickname = Intent.GetStringExtra("UtenteCorrente");
-            welcome.Text = "Welcome " + userNickname;
+            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname;
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
+            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname;
         }
 
         //private void TestOnClick(object sender, EventArgs e)

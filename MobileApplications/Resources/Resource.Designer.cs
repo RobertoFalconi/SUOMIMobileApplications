@@ -2381,17 +2381,20 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800c1
 			public const int ChangePasswordTxt = 2131230913;
 			
+			// aapt resource value: 0x7f0800c3
+			public const int DeleteButton = 2131230915;
+			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int FinnishSauna = 2131230922;
+			// aapt resource value: 0x7f0800cb
+			public const int FinnishSauna = 2131230923;
+			
+			// aapt resource value: 0x7f0800ce
+			public const int Jacuzzi = 2131230926;
 			
 			// aapt resource value: 0x7f0800cd
-			public const int Jacuzzi = 2131230925;
-			
-			// aapt resource value: 0x7f0800cc
-			public const int Kneipp = 2131230924;
+			public const int Kneipp = 2131230925;
 			
 			// aapt resource value: 0x7f08009f
 			public const int LoginButton = 2131230879;
@@ -2423,17 +2426,17 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800a0
 			public const int SignupButton = 2131230880;
 			
+			// aapt resource value: 0x7f0800c7
+			public const int SignupNicknameLabel = 2131230919;
+			
 			// aapt resource value: 0x7f0800c6
-			public const int SignupNicknameLabel = 2131230918;
+			public const int SignupNicknameTxt = 2131230918;
 			
 			// aapt resource value: 0x7f0800c5
-			public const int SignupNicknameTxt = 2131230917;
+			public const int SignupPasswordLabel = 2131230917;
 			
 			// aapt resource value: 0x7f0800c4
-			public const int SignupPasswordLabel = 2131230916;
-			
-			// aapt resource value: 0x7f0800c3
-			public const int SignupPasswordTxt = 2131230915;
+			public const int SignupPasswordTxt = 2131230916;
 			
 			// aapt resource value: 0x7f0800a1
 			public const int TestText = 2131230881;
@@ -2444,8 +2447,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800bd
 			public const int TitleProfile = 2131230909;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int TurkishBath = 2131230923;
+			// aapt resource value: 0x7f0800cc
+			public const int TurkishBath = 2131230924;
 			
 			// aapt resource value: 0x7f0800c2
 			public const int UpdateButton = 2131230914;
@@ -2504,8 +2507,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800d0
-			public const int action_settings = 2131230928;
+			// aapt resource value: 0x7f0800d1
+			public const int action_settings = 2131230929;
 			
 			// aapt resource value: 0x7f0800ac
 			public const int action_text = 2131230892;
@@ -2708,17 +2711,17 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800cf
-			public const int logout_button = 2131230927;
+			// aapt resource value: 0x7f0800d0
+			public const int logout_button = 2131230928;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int masked = 2131230921;
+			// aapt resource value: 0x7f0800ca
+			public const int masked = 2131230922;
 			
 			// aapt resource value: 0x7f0800b0
 			public const int media_actions = 2131230896;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int message = 2131230919;
+			// aapt resource value: 0x7f0800c8
+			public const int message = 2131230920;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2729,8 +2732,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f0800ce
-			public const int nav_share = 2131230926;
+			// aapt resource value: 0x7f0800cf
+			public const int nav_share = 2131230927;
 			
 			// aapt resource value: 0x7f08008c
 			public const int nav_view = 2131230860;
@@ -2978,8 +2981,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int visible = 2131230920;
+			// aapt resource value: 0x7f0800c9
+			public const int visible = 2131230921;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

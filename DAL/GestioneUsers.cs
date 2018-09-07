@@ -125,10 +125,13 @@ namespace DAL
 
                 command.CommandText = "UPDATE Users SET Nickname = @Nickname, Password = @Password " +
                                       "WHERE Id = @Id";
-
+                
                 command.ExecuteNonQuery();
                 conn.Close();
             }
+
+            BE.User.CurrentUser.Nickname = nuovoNickname;
+            BE.User.CurrentUser.Password = nuovaPassword;
         }
 
 
