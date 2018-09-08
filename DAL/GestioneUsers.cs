@@ -51,11 +51,11 @@ namespace DAL
             }
         }
 
-        public static User ReadUser(String Nickname)
+        public static User ReadUser(String Nickname, String Password)
         {
             SqlConnection conn = Connetti();
 
-            string query = "SELECT * FROM Users WHERE Users.Nickname = '" + Nickname + "'";
+            string query = "SELECT * FROM Users WHERE Users.Nickname = '" + Nickname + "' AND Users.Password = '" + Password + "'";
 
             User userDaRestituire = null;
 
@@ -160,6 +160,29 @@ namespace DAL
             userDaSloggare.Id = 0;
             userDaSloggare.Nickname = null;
             userDaSloggare.Password = null;
+        }
+
+        public static bool CheckNickname(string nickname)
+        {
+            SqlConnection conn = Connetti();
+
+            bool result = false;
+
+            using (conn)
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.Parameters.AddWithValue("@Nickname", nickname);
+
+                command.CommandText = "SELECT * FROM Users WHERE Nickname = @Nickname";
+
+                result = command.ExecuteReader().HasRows;
+
+                conn.Close();
+            }
+
+            return result;
         }
 
     }

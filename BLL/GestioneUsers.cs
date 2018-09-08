@@ -15,9 +15,9 @@ namespace BLL
             DAL.GestioneUsers.CreateUser(userDaInserire);
         }
 
-        public static User ReadUser(String nickname)
+        public static User ReadUser(String nickname, String password)
         {
-            return DAL.GestioneUsers.ReadUser(nickname);
+            return DAL.GestioneUsers.ReadUser(nickname, password);
         }
 
         public static User ReadUser(int id)
@@ -44,12 +44,17 @@ namespace BLL
 
         public static User LoginUser(string nickname, string password)
         {
-            return ReadUser(nickname);
+            return ReadUser(nickname, password);
         }
 
         public static void LogoutUser(User userDaSloggare)
         {
             DAL.GestioneUsers.LogOutUser(userDaSloggare);
+        }
+
+        public static bool CheckNickname(string nickname)
+        {
+            return DAL.GestioneUsers.CheckNickname(nickname);
         }
 
     }

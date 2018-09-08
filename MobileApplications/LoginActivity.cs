@@ -38,8 +38,13 @@ namespace MobileApplications
             string password = Password.Text;
             User utenteCorrente = BLL.GestioneUsers.LoginUser(nickname, password);
             
-            StartActivity(typeof(MainActivity));
-
+            if (utenteCorrente == null)
+            {
+                Toast.MakeText(this, "Wrong nickname and/or password.", ToastLength.Long).Show();
+            } else
+            {
+                StartActivity(typeof(MainActivity));
+            }
         }
     }
 }

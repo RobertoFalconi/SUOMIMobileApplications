@@ -65,7 +65,42 @@ namespace MobileApplications
         {
             EditText newNickname = FindViewById<EditText>(Resource.Id.ChangeNicknameTxt);
             EditText newPassword = FindViewById<EditText>(Resource.Id.ChangePasswordTxt);
-            BLL.GestioneUsers.UpdateUser(BE.User.CurrentUser, newNickname.Text, newPassword.Text);
+            string currentNickname = BE.User.CurrentUser.Nickname;
+
+            string nickname = newNickname.Text;
+            string password = newPassword.Text;
+
+            // Check nickname
+            if (nickname == String.Empty)
+            {
+                Toast.MakeText(this, "Insert a nickname.", ToastLength.Long).Show();
+            }
+            // Check password
+            if (password == String.Empty)
+            {
+                Toast.MakeText(this, "Insert a valid password.", ToastLength.Long).Show();
+            }
+
+            if (nickname != String.Empty && password != String.Empty)
+            {
+                // Check nickname existance
+                if (!currentNickname.Equals(nickname))
+                {
+                    if (BLL.GestioneUsers.CheckNickname(nickname))
+                    {
+                        Toast.MakeText(this, "This nickname already exists. Choose another one.", ToastLength.Long).Show();
+                    }
+                    else
+                    {
+                        BLL.GestioneUsers.UpdateUser(BE.User.CurrentUser, nickname, password);
+                        Toast.MakeText(this, "Profile updated!", ToastLength.Short).Show();
+                    }
+                } else
+                {
+                    BLL.GestioneUsers.UpdateUser(BE.User.CurrentUser, nickname, password);
+                    Toast.MakeText(this, "Profile updated!", ToastLength.Short).Show();
+                }
+            }
         }
 
         private void DeleteOnClick(object sender, EventArgs e)

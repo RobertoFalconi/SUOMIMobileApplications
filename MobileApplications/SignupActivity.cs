@@ -35,11 +35,31 @@ namespace MobileApplications
             EditText Password = FindViewById<EditText>(Resource.Id.SignupPasswordTxt);
             string nickname = Nickname.Text;
             string password = Password.Text;
-            BLL.GestioneUsers.SigninUser(nickname, password);
 
-            StartActivity(typeof(MainActivity));
+            // Check nickname
+            if (nickname == String.Empty)
+            {
+                Toast.MakeText(this, "Insert a nickname.", ToastLength.Long).Show();
+            }
+            // Check password
+            if (password == String.Empty)
+            {
+                Toast.MakeText(this, "Insert a password.", ToastLength.Long).Show();
+            }
 
+            if (nickname != String.Empty && password != String.Empty)
+            {
+                // Check nickname existance
+                if (BLL.GestioneUsers.CheckNickname(nickname))
+                {
+                    Toast.MakeText(this, "This nickname already exists. Choose another one.", ToastLength.Long).Show();
+                }
+                else
+                {
+                    BLL.GestioneUsers.SigninUser(nickname, password);
+                    StartActivity(typeof(MainActivity));
+                }
+            }
         }
-
     }
 }
