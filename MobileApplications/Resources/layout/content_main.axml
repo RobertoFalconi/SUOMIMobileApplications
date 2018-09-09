@@ -10,25 +10,46 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
+		android:layout_margin="10dp"
 		android:text="Welcome"
 		android:id="@+id/WelcomeUser"
 		android:layout_centerHorizontal="true"
+		android:textSize="26dp"
+		android:textStyle="bold"
 	/>
-	<TextView
-		android:id="@+id/locationTextView"
-		android:text="Location"
+	<LinearLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
+		android:layout_centerHorizontal="true"
 		android:layout_below="@id/WelcomeUser"
+		android:id="@+id/weatherLayout">
+
+		<ImageView
+			android:src="@android:drawable/ic_menu_gallery"
+			android:layout_width="25dp"
+			android:layout_height="25dp"
+			android:id="@+id/weatherImageView" />
+
+		<TextView
+			android:id="@+id/weatherTextView"
+			android:text="The weather is loading..."
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_gravity="center_vertical"
 		/>
+
+		
+		
+	</LinearLayout>
+	
 	<TextView
-		android:id="@+id/weatherTextView"
-		android:text="Weather"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:layout_below="@id/locationTextView"
+			android:id="@+id/weatherDescTextView"
+			android:text="..."
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/weatherLayout"
+			android:layout_centerInParent="true"
 		/>
+
 </RelativeLayout>

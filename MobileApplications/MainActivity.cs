@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Android;
@@ -46,14 +48,14 @@ namespace MobileApplications
             navigationView.SetNavigationItemSelectedListener(this);
 
             TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
-            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname + "!";
+            welcome.Text = "Welcome, " + BE.User.CurrentUser.Nickname + "!";
 
             InitializeLocationManager();
         }
 
         private void InitializeLocationManager()
         {
-            locationManager = (LocationManager) GetSystemService(LocationService);
+            locationManager = (LocationManager)GetSystemService(LocationService);
             Criteria criteriaForLocationService = new Criteria
             {
                 Accuracy = Accuracy.Fine
@@ -73,7 +75,7 @@ namespace MobileApplications
         {
             base.OnStart();
             TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
-            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname + "!";
+            welcome.Text = "Welcome, " + BE.User.CurrentUser.Nickname + "!";
         }
 
         protected override void OnResume()
@@ -82,8 +84,9 @@ namespace MobileApplications
             try
             {
                 locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
-            } catch { }
-            
+            }
+            catch { }
+
         }
         protected override void OnPause()
         {
@@ -99,7 +102,7 @@ namespace MobileApplications
         public override void OnBackPressed()
         {
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
                 drawer.CloseDrawer(GravityCompat.Start);
             }
@@ -128,7 +131,7 @@ namespace MobileApplications
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
+            View view = (View)sender;
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
@@ -177,12 +180,50 @@ namespace MobileApplications
             }
             else
             {
-                TextView locationText = FindViewById<TextView>(Resource.Id.locationTextView);
-                string latitude = currentLocation.Latitude.ToString("0.00");
-                string longitude = currentLocation.Longitude.ToString("0.00");
-                locationText.Text = String.Format("Latitude: {0} - Longitude: {1}", latitude, longitude);
+                //TextView locationText = FindViewById<TextView>(Resource.Id.locationTextView);
+                string latitude = currentLocation.Latitude.ToString();
+                string longitude = currentLocation.Longitude.ToString();
+                //locationText.Text = String.Format("Latitude: {0} - Longitude: {1}", latitude, longitude);
+                
+                Weather weather = await Task.Run(() => Weather(latitude, longitude));
+
+                string weatherCompleteDescription = String.Empty;
+                string weatherDesc = weather.ShortDesc;
+
+                switch (weather.Id.First().ToString())
+                {
+                    case "2":
+                    case "3":
+                    case "5":
+                    case "6":
+                        weatherCompleteDescription = "There's a " + weatherDesc + " outside.";
+                        break;
+                    case "7":
+                        weatherCompleteDescription = "There's a " + weatherDesc + " atmosphere.";
+                        break;
+                    case "8":
+                        if (weather.Id == "800")
+                        {
+                            weatherCompleteDescription = "We have a " + weatherDesc + " today!";
+                        }
+                        else
+                        {
+                            weatherCompleteDescription = "The sky is overshadowed by " + weatherDesc + ".";
+                        }
+
+                        break;
+                }
+
                 TextView weatherText = FindViewById<TextView>(Resource.Id.weatherTextView);
-                weatherText.Text = await Weather(latitude, longitude);
+                weatherText.Text = "It's " + weather.Temp + "°C in " + weather.Name + ".";
+
+                TextView weatherDescView = FindViewById<TextView>(Resource.Id.weatherDescTextView);
+                weatherDescView.Text = weatherCompleteDescription;
+
+                ImageView weatherImage = FindViewById<ImageView>(Resource.Id.weatherImageView);
+                var imageBitmap = GetBitmapFromUrl("http://openweathermap.org/img/w/" + weather.Icon + ".png");
+                weatherImage.SetImageBitmap(imageBitmap);
+
             }
         }
 
@@ -203,9 +244,9 @@ namespace MobileApplications
             // if the provider has recently become available after a period of unavailability. 
         }
 
-        private async Task<string> Weather(string latitude, string longitude)
+        private async Task<Weather> Weather(string latitude, string longitude)
         {
-            string weather = String.Empty;
+            Weather weather = new Weather();
             string key = BLL.GestioneWeather.GetWeatherAPIKey();
 
             string queryString = "http://api.openweathermap.org/data/2.5/weather?lat="
@@ -221,9 +262,26 @@ namespace MobileApplications
                 data = JsonConvert.DeserializeObject(json);
             }
 
-            weather = "It's " + data["main"]["temp"] + "°C in " + data["name"];
+            weather.Temp = data["main"]["temp"];
+            weather.Name = data["name"];
+            weather.ShortDesc = data["weather"][0]["description"]; ;
+            weather.Id = data["weather"][0]["id"];
+            weather.Icon = data["weather"][0]["icon"];
 
             return weather;
+        }
+
+        public static Android.Graphics.Bitmap GetBitmapFromUrl(string url)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                byte[] bytes = webClient.DownloadData(url);
+                if (bytes != null && bytes.Length > 0)
+                {
+                    return Android.Graphics.BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
+                }
+            }
+            return null;
         }
     }
 }
