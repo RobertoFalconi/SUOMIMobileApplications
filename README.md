@@ -1,5 +1,5 @@
 #  MobileApplications
-Modern, fully-native, Android App. Developed in Xamarin.Android using Microsoft Azure.
+Modern, fully-native, Android App. Developed in Xamarin.Android using Visual Studio and Microsoft Azure.
 
 # Useful Links
 
