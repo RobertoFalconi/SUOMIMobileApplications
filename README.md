@@ -1,4 +1,4 @@
-# Android SUOMI
+#  MobileApplications
 Modern, fully-native, Android App. Developed in Xamarin.Android using Microsoft Azure.
 
 # Useful Links
