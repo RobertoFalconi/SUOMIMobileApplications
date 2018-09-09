@@ -15,4 +15,20 @@
 		android:id="@+id/WelcomeUser"
 		android:layout_centerHorizontal="true"
 	/>
+	<TextView
+		android:id="@+id/locationTextView"
+		android:text="Location"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:layout_below="@id/WelcomeUser"
+		/>
+	<TextView
+		android:id="@+id/weatherTextView"
+		android:text="Weather"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:layout_below="@id/locationTextView"
+		/>
 </RelativeLayout>

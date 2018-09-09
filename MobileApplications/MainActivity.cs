@@ -1,23 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Android;
 using Android.App;
 using Android.Content;
+using Android.Locations;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace MobileApplications
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
-    public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
+    public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener, ILocationListener
     {
-        static Random rnd = new Random();
+        Location currentLocation;
+        LocationManager locationManager;
+        string locationProvider;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,12 +37,6 @@ namespace MobileApplications
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-            //Button button = FindViewById<Button>(Resource.Id.TestButton);
-            //button.Click += TestOnClick;
-
-            //Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
-            //loginButton.Click += RedirectToLoginOnClick;
-
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
@@ -44,22 +46,50 @@ namespace MobileApplications
             navigationView.SetNavigationItemSelectedListener(this);
 
             TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
-            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname;
+            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname + "!";
+
+            InitializeLocationManager();
+        }
+
+        private void InitializeLocationManager()
+        {
+            locationManager = (LocationManager) GetSystemService(LocationService);
+            Criteria criteriaForLocationService = new Criteria
+            {
+                Accuracy = Accuracy.Fine
+            };
+            IList<string> acceptableLocationProviders = locationManager.GetProviders(criteriaForLocationService, true);
+            if (acceptableLocationProviders.Any())
+            {
+                locationProvider = acceptableLocationProviders.First();
+            }
+            else
+            {
+                locationProvider = string.Empty;
+            }
         }
 
         protected override void OnStart()
         {
             base.OnStart();
             TextView welcome = FindViewById<TextView>(Resource.Id.WelcomeUser);
-            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname;
+            welcome.Text = "Welcome " + BE.User.CurrentUser.Nickname + "!";
         }
 
-        //private void TestOnClick(object sender, EventArgs e)
-        //{
-        //    TextView test = FindViewById<TextView>(Resource.Id.TestText);
-        //    List<string> tests = new List<string>() { "Test 1", "Test 2", "Test 3", "Test 4", "Test 5" };
-        //    test.Text = tests[rnd.Next(tests.Count)];
-        //}
+        protected override void OnResume()
+        {
+            base.OnResume();
+            try
+            {
+                locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
+            } catch { }
+            
+        }
+        protected override void OnPause()
+        {
+            base.OnPause();
+            locationManager.RemoveUpdates(this);
+        }
 
         private void RedirectToLoginOnClick(object sender, EventArgs e)
         {
@@ -109,8 +139,6 @@ namespace MobileApplications
 
             if (id == Resource.Id.FinnishSauna)
             {
-                // Handle the FinnishSauna action
-                // var intent = new Intent(this, typeof(NewPageActivity));
                 StartActivity(typeof(FinnishSaunaActivity));
             }
             else if (id == Resource.Id.TurkishBath)
@@ -138,6 +166,64 @@ namespace MobileApplications
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        public async void OnLocationChanged(Location location)
+        {
+            currentLocation = location;
+            if (currentLocation == null)
+            {
+                //Error Message  
+            }
+            else
+            {
+                TextView locationText = FindViewById<TextView>(Resource.Id.locationTextView);
+                string latitude = currentLocation.Latitude.ToString("0.00");
+                string longitude = currentLocation.Longitude.ToString("0.00");
+                locationText.Text = String.Format("Latitude: {0} - Longitude: {1}", latitude, longitude);
+                TextView weatherText = FindViewById<TextView>(Resource.Id.weatherTextView);
+                weatherText.Text = await Weather(latitude, longitude);
+            }
+        }
+
+        public void OnProviderDisabled(string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnProviderEnabled(string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
+        {
+            // Called when the provider status changes.
+            // This method is called when a provider is unable to fetch a location or
+            // if the provider has recently become available after a period of unavailability. 
+        }
+
+        private async Task<string> Weather(string latitude, string longitude)
+        {
+            string weather = String.Empty;
+            string key = BLL.GestioneWeather.GetWeatherAPIKey();
+
+            string queryString = "http://api.openweathermap.org/data/2.5/weather?lat="
+               + latitude + "&lon=" + longitude + "&appid=" + key + "&units=metric";
+
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync(queryString);
+
+            dynamic data = null;
+            if (response != null)
+            {
+                string json = response.Content.ReadAsStringAsync().Result;
+                data = JsonConvert.DeserializeObject(json);
+            }
+
+            weather = "It's " + data["main"]["temp"] + "°C in " + data["name"];
+
+            return weather;
         }
     }
 }

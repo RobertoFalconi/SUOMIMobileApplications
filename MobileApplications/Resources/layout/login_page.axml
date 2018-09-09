@@ -22,7 +22,7 @@
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
 		android:id="@+id/LoginPasswordTxt"
-		android:inputType="text"
+		android:inputType="textPassword"
 		android:layout_above="@id/LoginButton"
 	/>
 	

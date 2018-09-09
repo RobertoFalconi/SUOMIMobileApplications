@@ -25,6 +25,9 @@ namespace MobileApplications
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
 
+            EditText Nickname = FindViewById<EditText>(Resource.Id.LoginNicknameTxt);
+            Nickname.RequestFocus();
+
             Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
 
             loginButton.Click += LoginOnClick;

@@ -24,6 +24,9 @@ namespace MobileApplications
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
 
+            EditText Nickname = FindViewById<EditText>(Resource.Id.SignupNicknameTxt);
+            Nickname.RequestFocus();
+
             Button signupButton = FindViewById<Button>(Resource.Id.SignupButton);
 
             signupButton.Click += SignUpOnClick;

@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace MobileApplications
 {
-    [Activity(Label = "FirstPageActivity", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "SUOMI", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class FirstPageActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
