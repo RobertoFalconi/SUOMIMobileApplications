@@ -11,9 +11,11 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using BLL;
 
 namespace MobileApplications
-{
+{    
+
     [Activity(Label = "Finnish Sauna", Theme = "@style/AppTheme.NoActionBar")]
     public class FinnishSaunaActivity : AppCompatActivity
     {
@@ -31,6 +33,14 @@ namespace MobileApplications
             toolbar.SetNavigationIcon(Resource.Drawable.abc_ic_ab_back_material);
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
+
+            
+            TextView welcome = FindViewById<TextView>(Resource.Id.FinnishSaunaText);
+            //welcome.Text = "Enqueued users: " + GestioneFinnishSaunas.ReadFinnishSauna().First();
+
+            string lista = "";
+            GestioneFinnishSaunas.ReadFinnishSauna().ForEach(x => lista += x);
+            welcome.Text = lista;
 
             //Window.AddFlags(WindowManagerFlags.TranslucentStatus);
         }

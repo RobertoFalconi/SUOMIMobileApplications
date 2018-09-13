@@ -12,7 +12,7 @@ namespace DAL
     {
         public static SqlConnection Connetti()
         {
-            string connectionString = "Data Source=AC-RFALCONI;Initial Catalog=AndroidSUOMI;Integrated Security=True";
+            string connectionString = ConnectionString.connectionString;
             return new SqlConnection(connectionString);
         }
 
@@ -38,7 +38,6 @@ namespace DAL
                 reader.Close();
                 conn.Close();
             }
-
             return usersEnqueued;
         }
         public static void EnqueueInFinnishSauna(User userDaInserire)
@@ -58,6 +57,7 @@ namespace DAL
 
                 conn.Close();
             }
+            
         }
 
         public static void DequeueFromFinnishSauna(User userDaRimuovere)

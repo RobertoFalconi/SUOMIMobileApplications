@@ -3,15 +3,9 @@ using System.Collections.Generic;
 
 namespace BE
 {
-    public class Kneipp
+    public static class Kneipp
     {
-        public int Id { get; set; }
-        public List<User> UsersEnqueued { get; set; }
-
-        public Kneipp(int id, List<User> usersEnqueued)
-        {
-            this.Id = id;
-            this.UsersEnqueued = usersEnqueued;
-        }
+        public static int Id { get; set; }
+        public static List<User> UsersEnqueued { get; set; }
     }
 }

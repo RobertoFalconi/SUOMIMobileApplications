@@ -98,17 +98,30 @@ namespace ConsoleApplications
             //GestioneKneipps.DequeueFromKneipp(utentedatogliere4);
 
             // ESEMPIO COMPLETO: SIGN IN, LOGOUT, LOGIN, LOGOUT, LOGIN, DELETION
-            User nuovoUtente = new User("SonoUnUtente!", "1234");
+            User nuovoUtente = new User("Ginuccio!", "1234");
 
             GestioneUsers.CreateUser(nuovoUtente);
 
-            GestioneUsers.LogoutUser(nuovoUtente);
+            //GestioneUsers.LogoutUser(nuovoUtente);
+
+            //User vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!", "1234");
+
+            //GestioneUsers.LogoutUser(vecchioUtente);
+
+            //vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!", "1234");
+
+            BE.User.CurrentUser = nuovoUtente;
+
+            GestioneFinnishSaunas.EnqueueInFinnishSauna(BE.User.CurrentUser);
+            GestioneJacuzzis.EnqueueInJacuzzi(BE.User.CurrentUser);
+            GestioneKneipps.EnqueueInKneipp(BE.User.CurrentUser);
+            GestioneTurkishBaths.EnqueueInTurkishBath(BE.User.CurrentUser);
+            //GestioneFinnishSaunas.DequeueFromFinnishSauna(BE.User.CurrentUser);
+
+            Console.WriteLine("Utenti in coda: ");
             
-            User vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!", "1234");
-
-            GestioneUsers.LogoutUser(vecchioUtente);
-
-            vecchioUtente = GestioneUsers.ReadUser("SonoUnUtente!", "1234");
+            Console.WriteLine(GestioneFinnishSaunas.ReadFinnishSauna().First());
+            Console.ReadLine();
 
             //GestioneUsers.DeleteUser(vecchioUtente);
 
