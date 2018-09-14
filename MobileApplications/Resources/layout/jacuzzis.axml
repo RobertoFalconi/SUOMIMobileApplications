@@ -43,6 +43,24 @@
 				android:textStyle="bold"
 				android:id="@+id/Title" />
 			<TextView
+				android:text="A hot tub Jacuzzi is a large tub or small pool full of water used for hydrotherapy, relaxation or just pleasure. Some have powerful jets for massage purposes."
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="12dp"
+				android:textStyle="bold"
+				android:id="@+id/JacuzziDescription" />
+			<Button
+				android:text="Add to queue!"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/EnqueueInJacuzzi"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true" />
+			<TextView
 				android:text=""
 				android:textAppearance="?android:attr/textAppearanceSmall"
 				android:layout_width="match_parent"

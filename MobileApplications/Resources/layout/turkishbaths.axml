@@ -43,6 +43,24 @@
 				android:textStyle="bold"
 				android:id="@+id/Title" />
 			<TextView
+				android:text="It starts with relaxation in a room heated by a continuous flow of hot, dry air, allowing the bather to perspire freely. Bathers may then move to an even hotter room before they wash in cold water."
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="12dp"
+				android:textStyle="bold"
+				android:id="@+id/TurkishBathDescription" />
+			<Button
+				android:text="Add to queue!"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/EnqueueInTurkishBath"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true" />
+			<TextView
 				android:text=""
 				android:textAppearance="?android:attr/textAppearanceSmall"
 				android:layout_width="match_parent"
