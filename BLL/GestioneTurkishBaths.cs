@@ -24,5 +24,10 @@ namespace BLL
         {
             DAL.GestioneTurkishBaths.DequeueFromTurkishBath(userToDequeue);
         }
+
+        public static bool ControllaUtente(User utenteDaRestituire)
+        {
+            return DAL.GestioneTurkishBaths.ControllaUtente(utenteDaRestituire);
+        }
     }
 }

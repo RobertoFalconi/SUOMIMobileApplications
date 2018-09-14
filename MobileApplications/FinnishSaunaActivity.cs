@@ -36,13 +36,33 @@ namespace MobileApplications
 
             
             TextView welcome = FindViewById<TextView>(Resource.Id.FinnishSaunaText);
-            //welcome.Text = "Enqueued users: " + GestioneFinnishSaunas.ReadFinnishSauna().First();
-
             string lista = "";
             GestioneFinnishSaunas.ReadFinnishSauna().ForEach(x => lista += x + " ");
             welcome.Text = lista;
 
-            //Window.AddFlags(WindowManagerFlags.TranslucentStatus);
+            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInSauna);
+            if (!GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            {
+                enqueueButton.Text = "Add to queue!";
+            } else
+            {
+                enqueueButton.Text = "Delete from queue!";
+            }
+            
+            enqueueButton.Click += EnqueueOnClick;
+
+        }
+
+        private void EnqueueOnClick(object sender, EventArgs e)
+        {
+            if (!GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            {
+                GestioneFinnishSaunas.EnqueueInFinnishSauna(BE.User.CurrentUser);
+            } else
+            {
+                GestioneFinnishSaunas.DequeueFromFinnishSauna(BE.User.CurrentUser);
+            }
+            
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

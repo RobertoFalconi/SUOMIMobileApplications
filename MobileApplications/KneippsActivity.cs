@@ -36,6 +36,30 @@ namespace MobileApplications
             BLL.GestioneKneipps.ReadKneipp().ForEach(x => lista += x + " ");
             welcome.Text = lista;
 
+            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInKneipp);
+            if (!BLL.GestioneKneipps.ControllaUtente(BE.User.CurrentUser))
+            {
+                enqueueButton.Text = "Add to queue!";
+            }
+            else
+            {
+                enqueueButton.Text = "Delete from queue!";
+            }
+
+            enqueueButton.Click += EnqueueOnClick;
+        }
+
+        private void EnqueueOnClick(object sender, EventArgs e)
+        {
+            if (!BLL.GestioneKneipps.ControllaUtente(BE.User.CurrentUser))
+            {
+                BLL.GestioneKneipps.EnqueueInKneipp(BE.User.CurrentUser);
+            }
+            else
+            {
+                BLL.GestioneKneipps.DequeueFromKneipp(BE.User.CurrentUser);
+            }
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

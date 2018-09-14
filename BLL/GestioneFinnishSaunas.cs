@@ -25,5 +25,10 @@ namespace BLL
             DAL.GestioneFinnishSaunas.DequeueFromFinnishSauna(userToDequeue);
         }
 
+        public static bool ControllaUtente(User utenteDaRestituire)
+        {
+            return DAL.GestioneFinnishSaunas.ControllaUtente(utenteDaRestituire);
+        }
+
     }
 }

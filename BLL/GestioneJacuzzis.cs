@@ -24,5 +24,10 @@ namespace BLL
         {
             DAL.GestioneJacuzzis.DequeueFromJacuzzi(userToDequeue);
         }
+
+        public static bool ControllaUtente(User utenteDaRestituire)
+        {
+            return DAL.GestioneJacuzzis.ControllaUtente(utenteDaRestituire);
+        }
     }
 }

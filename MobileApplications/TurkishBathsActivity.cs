@@ -36,6 +36,30 @@ namespace MobileApplications
             BLL.GestioneTurkishBaths.ReadTurkishBath().ForEach(x => lista += x + " ");
             welcome.Text = lista;
 
+            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInTurkishBath);
+            if (!BLL.GestioneTurkishBaths.ControllaUtente(BE.User.CurrentUser))
+            {
+                enqueueButton.Text = "Add to queue!";
+            }
+            else
+            {
+                enqueueButton.Text = "Delete from queue!";
+            }
+
+            enqueueButton.Click += EnqueueOnClick;
+        }
+
+        private void EnqueueOnClick(object sender, EventArgs e)
+        {
+            if (!BLL.GestioneTurkishBaths.ControllaUtente(BE.User.CurrentUser))
+            {
+                BLL.GestioneTurkishBaths.EnqueueInTurkishBath(BE.User.CurrentUser);
+            }
+            else
+            {
+                BLL.GestioneTurkishBaths.DequeueFromTurkishBath(BE.User.CurrentUser);
+            }
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

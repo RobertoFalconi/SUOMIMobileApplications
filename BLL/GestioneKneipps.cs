@@ -24,5 +24,10 @@ namespace BLL
         {
             DAL.GestioneKneipps.DequeueFromKneipp(userToDequeue);
         }
+
+        public static bool ControllaUtente(User utenteDaRestituire)
+        {
+            return DAL.GestioneKneipps.ControllaUtente(utenteDaRestituire);
+        }
     }
 }

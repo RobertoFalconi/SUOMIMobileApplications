@@ -35,6 +35,31 @@ namespace MobileApplications
             string lista = "";
             BLL.GestioneJacuzzis.ReadJacuzzi().ForEach(x => lista += x + " ");
             welcome.Text = lista;
+
+            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInJacuzzi);
+            if (!BLL.GestioneJacuzzis.ControllaUtente(BE.User.CurrentUser))
+            {
+                enqueueButton.Text = "Add to queue!";
+            }
+            else
+            {
+                enqueueButton.Text = "Delete from queue!";
+            }
+
+            enqueueButton.Click += EnqueueOnClick;
+        }
+
+        private void EnqueueOnClick(object sender, EventArgs e)
+        {
+            if (!BLL.GestioneJacuzzis.ControllaUtente(BE.User.CurrentUser))
+            {
+                BLL.GestioneJacuzzis.EnqueueInJacuzzi(BE.User.CurrentUser);
+            }
+            else
+            {
+                BLL.GestioneJacuzzis.DequeueFromJacuzzi(BE.User.CurrentUser);
+            }
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
