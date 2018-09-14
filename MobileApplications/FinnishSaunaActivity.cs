@@ -39,7 +39,7 @@ namespace MobileApplications
             //welcome.Text = "Enqueued users: " + GestioneFinnishSaunas.ReadFinnishSauna().First();
 
             string lista = "";
-            GestioneFinnishSaunas.ReadFinnishSauna().ForEach(x => lista += x);
+            GestioneFinnishSaunas.ReadFinnishSauna().ForEach(x => lista += x + " ");
             welcome.Text = lista;
 
             //Window.AddFlags(WindowManagerFlags.TranslucentStatus);

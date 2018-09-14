@@ -30,7 +30,11 @@ namespace MobileApplications
             toolbar.SetNavigationIcon(Resource.Drawable.abc_ic_ab_back_material);
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
-            
+
+            TextView welcome = FindViewById<TextView>(Resource.Id.JacuzziText);
+            string lista = "";
+            BLL.GestioneJacuzzis.ReadJacuzzi().ForEach(x => lista += x + " ");
+            welcome.Text = lista;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
