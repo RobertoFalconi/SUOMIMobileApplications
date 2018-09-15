@@ -21,6 +21,10 @@ namespace MobileApplications
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.first_page);
+
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
+            Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
+
             Button loginButton = FindViewById<Button>(Resource.Id.LoginButton);
             loginButton.Click += GoToLoginPage;
             Button signupButton = FindViewById<Button>(Resource.Id.SignupButton);

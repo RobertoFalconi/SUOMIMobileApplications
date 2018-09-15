@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
             android:id="@+id/FinnishSauna"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_sauna"
             android:title="Finnish sauna" />
         <item
             android:id="@+id/TurkishBath"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_turkishbath"
             android:title="Turkish bath" />
         <item
             android:id="@+id/Kneipp"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_kneipp"
             android:title="Kneipp" />
         <item
             android:id="@+id/Jacuzzi"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_jacuzzi"
             android:title="Jacuzzi" />
     </group>
 

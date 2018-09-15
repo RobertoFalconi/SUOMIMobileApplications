@@ -17,7 +17,7 @@
 		android:layout_width="124.5dp"
 		android:layout_height="100.0dp"
 		android:paddingTop="@dimen/nav_header_vertical_spacing"
-		app:srcCompat="@mipmap/penguin_icon"
+		app:srcCompat="@mipmap/penguin"
 		android:layout_marginBottom="0.0dp"
 		android:layout_marginTop="0.0dp" />
 	<TextView

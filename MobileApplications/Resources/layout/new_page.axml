@@ -44,13 +44,13 @@
 				android:id="@+id/Title" />
 			<TextView
 				android:text="Physically, nothing is more reinvigorating than a deep, healthy sweat in a Finnish Sauna. Tension fades. Muscles unwind. Mentally, we emerge relaxed, revived and ready for whatever the day may bring."
-				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textSize="10sp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:layout_marginTop="12dp"
 				android:layout_marginLeft="12dp"
+				android:layout_marginRight="12dp"
 				android:textStyle="bold"
 				android:id="@+id/FinnishSaunaDescription" />
 			<Button
@@ -58,6 +58,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/EnqueueInSauna"
+				android:layout_marginLeft="10dp"
 				android:layout_centerHorizontal="true"
 				android:layout_centerVertical="true" />
 			<TextView

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:background="@drawable/login_background">
 	<Button
 		android:text="Sign up!"
 		android:layout_width="wrap_content"
@@ -10,21 +11,25 @@
 		android:id="@+id/SignupButton"
 		android:layout_centerHorizontal="true"
 		android:layout_centerVertical="true"
-		
+		android:backgroundTint="@android:color/white"
+		android:textColor="@color/colorAccent"
 	 />
 	<EditText
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:id="@+id/SignupPasswordTxt"
 		android:inputType="textPassword"
 		android:layout_above="@id/SignupButton"
+		android:backgroundTint="@android:color/white"
 	/>
 	
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:text="Password"
 		android:id="@+id/SignupPasswordLabel"
 		android:layout_centerHorizontal="true"
@@ -35,14 +40,17 @@
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:id="@+id/SignupNicknameTxt"
 		android:inputType="text"
 		android:layout_above="@id/SignupPasswordLabel"
+		android:backgroundTint="@android:color/white"
 	/>
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:text="Nickname"
 		android:id="@+id/SignupNicknameLabel"
 		android:layout_centerHorizontal="true"

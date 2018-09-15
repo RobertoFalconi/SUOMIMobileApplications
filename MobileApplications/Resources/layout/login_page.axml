@@ -5,6 +5,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@drawable/login_background"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	tools:showIn="@layout/app_bar_main">
 	
@@ -15,21 +16,25 @@
 		android:id="@+id/LoginButton"
 		android:layout_centerHorizontal="true"
 		android:layout_centerVertical="true"
-		
+		android:backgroundTint="@android:color/white"
+		android:textColor="@color/colorAccent"
 	 />
 	<EditText
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:id="@+id/LoginPasswordTxt"
 		android:inputType="textPassword"
 		android:layout_above="@id/LoginButton"
+		android:backgroundTint="@android:color/white"
 	/>
 	
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
+		android:textColor="#FFF"
 		android:text="Password"
 		android:id="@+id/LoginPasswordLabel"
 		android:layout_centerHorizontal="true"
@@ -40,14 +45,17 @@
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:layout_centerInParent="true"
+		android:textColor="@android:color/white"
 		android:id="@+id/LoginNicknameTxt"
 		android:inputType="text"
 		android:layout_above="@id/LoginPasswordLabel"
+		android:backgroundTint="@android:color/white"
 	/>
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
+		android:textColor="#FFF"
 		android:text="Nickname"
 		android:id="@+id/LoginNicknameLabel"
 		android:layout_centerHorizontal="true"

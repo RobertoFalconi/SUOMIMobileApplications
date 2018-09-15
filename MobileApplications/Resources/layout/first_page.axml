@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:background="@drawable/login_background">
 	<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,23 +15,34 @@
 			android:text="LOG IN"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:backgroundTint="@android:color/white"
+			android:textColor="@color/colorAccent"
 			android:id="@+id/LoginButton"
 			/>
 		<Button
 			android:text="SIGN UP"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:backgroundTint="@android:color/white"
+			android:textColor="@color/colorAccent"
 			android:id="@+id/SignupButton"
 			/>
 	</LinearLayout>
 
 	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
 		android:layout_centerInParent="true"
 		android:text="Welcome to SUOMI!"
+		android:textStyle="bold"
+		android:textSize="30dp"
+		android:textColor="#FFF"
+		android:layout_marginBottom="30dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
 		android:id="@+id/TestText"
 		android:layout_centerHorizontal="true"
 		android:layout_above="@id/Buttons"
+		android:autoSizeTextType="uniform"
 	/>
 </RelativeLayout>

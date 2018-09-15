@@ -22,7 +22,7 @@ namespace MobileApplications
 
             SetContentView(Resource.Layout.signup_page);
 
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 23, 114, 176));
 
             EditText Nickname = FindViewById<EditText>(Resource.Id.SignupNicknameTxt);
             Nickname.RequestFocus();

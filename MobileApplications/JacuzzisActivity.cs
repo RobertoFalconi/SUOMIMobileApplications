@@ -29,7 +29,7 @@ namespace MobileApplications
 
             toolbar.SetNavigationIcon(Resource.Drawable.abc_ic_ab_back_material);
 
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 27, 49, 71));
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 23, 114, 176));
 
             TextView welcome = FindViewById<TextView>(Resource.Id.JacuzziText);
             string lista = "";
