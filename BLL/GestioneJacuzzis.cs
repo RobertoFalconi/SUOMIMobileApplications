@@ -29,5 +29,10 @@ namespace BLL
         {
             return DAL.GestioneJacuzzis.ControllaUtente(utenteDaRestituire);
         }
+
+        public static bool IsJacuzziEmpty()
+        {
+            return ReadJacuzzi().Count() == 0;
+        }
     }
 }

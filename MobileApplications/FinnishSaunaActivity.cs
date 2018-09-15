@@ -13,12 +13,17 @@ using Android.Views;
 using Android.Widget;
 using BLL;
 
+using static BLL.GestioneFinnishSaunas;
+
 namespace MobileApplications
 {    
 
     [Activity(Label = "Finnish Sauna", Theme = "@style/AppTheme.NoActionBar")]
     public class FinnishSaunaActivity : AppCompatActivity
     {
+        TextView UsersList { get; set; }
+        Button EnqueueButton { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,40 +40,61 @@ namespace MobileApplications
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 23, 114, 176));
 
             
-            TextView welcome = FindViewById<TextView>(Resource.Id.FinnishSaunaText);
-            string lista = "";
-            GestioneFinnishSaunas.ReadFinnishSauna().ForEach(x => lista += x + " ");
-            welcome.Text = lista;
+            UsersList = FindViewById<TextView>(Resource.Id.FinnishSaunaText);
+            RefreshFinnishSaunaList();
 
-            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInSauna);
-            if (!GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            EnqueueButton = FindViewById<Button>(Resource.Id.EnqueueInSauna);
+            if (!ControllaUtente(BE.User.CurrentUser))
             {
-                enqueueButton.Text = "Add to queue!";
+                EnqueueButton.Text = "Add to queue!";
             } else
             {
-                enqueueButton.Text = "Delete from queue!";
+                EnqueueButton.Text = "Delete from queue!";
             }
             
-            enqueueButton.Click += EnqueueOnClick;
+            EnqueueButton.Click += EnqueueOnClick;
 
         }
 
         private void EnqueueOnClick(object sender, EventArgs e)
         {
-            if (!GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            if (!ControllaUtente(BE.User.CurrentUser))
             {
-                GestioneFinnishSaunas.EnqueueInFinnishSauna(BE.User.CurrentUser);
+                EnqueueInFinnishSauna(BE.User.CurrentUser);
+                Toast.MakeText(this, "You're now enqueued for the finnish sauna!", ToastLength.Long).Show();
+                EnqueueButton.Text = "Delete from queue!";
             } else
             {
-                GestioneFinnishSaunas.DequeueFromFinnishSauna(BE.User.CurrentUser);
+                DequeueFromFinnishSauna(BE.User.CurrentUser);
+                Toast.MakeText(this, "You've deleted your reservation for the finnish sauna!", ToastLength.Long).Show();
+                EnqueueButton.Text = "Add to queue!";
             }
-            
+            RefreshFinnishSaunaList();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home) Finish();
             return base.OnOptionsItemSelected(item);
+        }
+
+        private void RefreshFinnishSaunaList()
+        {
+            string list = "";
+            if (IsFinnishSaunaEmpty())
+            {
+                list = "No one is enqueued. Be the first!";
+            }
+            else
+            {
+                int i = 1;
+                ReadFinnishSauna().ForEach(x =>
+                {
+                    list += String.Format("{0}. {1}\n", i, x);
+                    i++;
+                });
+            }
+            UsersList.Text = list;
         }
     }
 }

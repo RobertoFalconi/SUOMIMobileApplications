@@ -29,5 +29,10 @@ namespace BLL
         {
             return DAL.GestioneTurkishBaths.ControllaUtente(utenteDaRestituire);
         }
+
+        public static bool IsTurkishBathEmpty()
+        {
+            return ReadTurkishBath().Count() == 0;
+        }
     }
 }

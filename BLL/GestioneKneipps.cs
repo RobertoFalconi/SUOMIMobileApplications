@@ -29,5 +29,10 @@ namespace BLL
         {
             return DAL.GestioneKneipps.ControllaUtente(utenteDaRestituire);
         }
+
+        public static bool IsKneippEmpty()
+        {
+            return ReadKneipp().Count() == 0;
+        }
     }
 }

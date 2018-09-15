@@ -11,11 +11,16 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
+using static BLL.GestioneJacuzzis;
+
 namespace MobileApplications
 {
     [Activity(Label = "Jacuzzis", Theme = "@style/AppTheme.NoActionBar")]
     public class JacuzzisActivity : AppCompatActivity
     {
+        TextView UsersList { get; set; }
+        Button EnqueueButton { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,41 +36,62 @@ namespace MobileApplications
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 23, 114, 176));
 
-            TextView welcome = FindViewById<TextView>(Resource.Id.JacuzziText);
-            string lista = "";
-            BLL.GestioneJacuzzis.ReadJacuzzi().ForEach(x => lista += x + " ");
-            welcome.Text = lista;
+            UsersList = FindViewById<TextView>(Resource.Id.JacuzziText);
+            RefreshJacuzziList();
 
-            Button enqueueButton = FindViewById<Button>(Resource.Id.EnqueueInJacuzzi);
-            if (!BLL.GestioneJacuzzis.ControllaUtente(BE.User.CurrentUser))
+            EnqueueButton = FindViewById<Button>(Resource.Id.EnqueueInJacuzzi);
+            if (!ControllaUtente(BE.User.CurrentUser))
             {
-                enqueueButton.Text = "Add to queue!";
+                EnqueueButton.Text = "Add to queue!";
             }
             else
             {
-                enqueueButton.Text = "Delete from queue!";
+                EnqueueButton.Text = "Delete from queue!";
             }
 
-            enqueueButton.Click += EnqueueOnClick;
+            EnqueueButton.Click += EnqueueOnClick;
         }
 
         private void EnqueueOnClick(object sender, EventArgs e)
         {
-            if (!BLL.GestioneJacuzzis.ControllaUtente(BE.User.CurrentUser))
+            if (!ControllaUtente(BE.User.CurrentUser))
             {
-                BLL.GestioneJacuzzis.EnqueueInJacuzzi(BE.User.CurrentUser);
+                EnqueueInJacuzzi(BE.User.CurrentUser);
+                Toast.MakeText(this, "You're now enqueued for the jacuzzi!", ToastLength.Long).Show();
+                EnqueueButton.Text = "Delete from queue!";
             }
             else
             {
-                BLL.GestioneJacuzzis.DequeueFromJacuzzi(BE.User.CurrentUser);
+                DequeueFromJacuzzi(BE.User.CurrentUser);
+                Toast.MakeText(this, "You've deleted your reservation for the jacuzzi!", ToastLength.Long).Show();
+                EnqueueButton.Text = "Add to queue!";
             }
-
+            RefreshJacuzziList();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home) Finish();
             return base.OnOptionsItemSelected(item);
+        }
+
+        private void RefreshJacuzziList()
+        {
+            string list = "";
+            if (IsJacuzziEmpty())
+            {
+                list = "No one is enqueued. Be the first!";
+            }
+            else
+            {
+                int i = 1;
+                ReadJacuzzi().ForEach(x =>
+                {
+                    list += String.Format("{0}. {1}\n", i, x);
+                    i++;
+                });
+            }
+            UsersList.Text = list;
         }
     }
 }

@@ -30,5 +30,9 @@ namespace BLL
             return DAL.GestioneFinnishSaunas.ControllaUtente(utenteDaRestituire);
         }
 
+        public static bool IsFinnishSaunaEmpty()
+        {
+            return ReadFinnishSauna().Count() == 0;
+        }
     }
 }
