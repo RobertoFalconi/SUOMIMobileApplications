@@ -156,10 +156,6 @@ namespace MobileApplications
             {
                 StartActivity(typeof(JacuzzisActivity));
             }
-            else if (id == Resource.Id.nav_share)
-            {
-
-            }
             else if (id == Resource.Id.logout_button)
             {
                 BLL.GestioneUsers.LogoutUser(BE.User.CurrentUser);

@@ -22,15 +22,11 @@
             android:title="Jacuzzi" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Account">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
                 android:id="@+id/logout_button"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_exit"
                 android:title="Log out" />
         </menu>
     </item>
