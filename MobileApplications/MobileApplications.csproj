@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FirstPageActivity.cs" />
+    <Compile Include="HistoryActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="JacuzzisActivity.cs" />
     <Compile Include="KneippsActivity.cs" />
@@ -232,6 +233,17 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\ic_exit.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_history.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\reservations.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:showIn="@layout/app_bar_main">
+
+  <android.support.design.widget.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+    <LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+      <TextView
+				android:text="You're in line for..."
+				android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="12dp"
+				android:textStyle="bold"
+				android:id="@+id/ReservationTitle" />
+     
+      <TextView
+				android:text="Finnish Sauna"
+				android:textSize="15dp"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+			/>
+      <TextView
+				android:text="You're not enqueued for the finnish sauna."
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/Reservation1"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+				android:layout_marginBottom="12dp"
+			/>
+			<TextView
+				android:text="Turkish Bath"
+				android:textSize="15dp"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+			/>
+      <TextView
+				android:text="You're not enqueued fo the turkish bath."
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/Reservation2"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+				android:layout_marginBottom="12dp"
+			/>
+			<TextView
+				android:text="Kneipp"
+				android:textSize="15dp"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+			/>
+      <TextView
+        android:text="You're not enqueued for the kneipp."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Reservation3"
+				
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+			/>
+			<TextView
+				android:text="Jacuzzi"
+				android:textSize="15dp"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="12dp"
+				android:layout_marginLeft="12dp"
+			/>
+      <TextView
+        android:text="You're not enqueued for the jacuzzi."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Reservation4"
+				
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+			/>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

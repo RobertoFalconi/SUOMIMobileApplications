@@ -2242,26 +2242,26 @@ namespace MobileApplications
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020078
-			public const int avd_hide_password_1 = 2130837624;
-			
 			// aapt resource value: 0x7f020079
-			public const int avd_hide_password_2 = 2130837625;
+			public const int avd_hide_password_1 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int avd_hide_password_3 = 2130837626;
+			public const int avd_hide_password_2 = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int avd_hide_password_3 = 2130837627;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02007b
-			public const int avd_show_password_1 = 2130837627;
-			
 			// aapt resource value: 0x7f02007c
-			public const int avd_show_password_2 = 2130837628;
+			public const int avd_show_password_1 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int avd_show_password_3 = 2130837629;
+			public const int avd_show_password_2 = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int avd_show_password_3 = 2130837630;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2288,85 +2288,88 @@ namespace MobileApplications
 			public const int ic_exit = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_jacuzzi = 2130837597;
+			public const int ic_history = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_kneipp = 2130837598;
+			public const int ic_jacuzzi = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_menu_camera = 2130837599;
+			public const int ic_kneipp = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_menu_gallery = 2130837600;
+			public const int ic_menu_camera = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_menu_manage = 2130837601;
+			public const int ic_menu_gallery = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_menu_send = 2130837602;
+			public const int ic_menu_manage = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_menu_share = 2130837603;
+			public const int ic_menu_send = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_menu_slideshow = 2130837604;
+			public const int ic_menu_share = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_sauna = 2130837605;
+			public const int ic_menu_slideshow = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_turkishbath = 2130837606;
+			public const int ic_sauna = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int login_background = 2130837607;
+			public const int ic_turkishbath = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int navigation_empty_icon = 2130837608;
+			public const int login_background = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int notification_action_background = 2130837609;
+			public const int navigation_empty_icon = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int notification_bg = 2130837610;
+			public const int notification_action_background = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int notification_bg_low = 2130837611;
+			public const int notification_bg = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int notification_bg_low_normal = 2130837612;
+			public const int notification_bg_low = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int notification_bg_low_pressed = 2130837613;
+			public const int notification_bg_low_normal = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int notification_bg_normal = 2130837614;
+			public const int notification_bg_low_pressed = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int notification_bg_normal_pressed = 2130837615;
+			public const int notification_bg_normal = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int notification_icon_background = 2130837616;
-			
-			// aapt resource value: 0x7f020076
-			public const int notification_template_icon_bg = 2130837622;
-			
-			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_low_bg = 2130837623;
+			public const int notification_bg_normal_pressed = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int notification_tile_bg = 2130837617;
+			public const int notification_icon_background = 2130837617;
+			
+			// aapt resource value: 0x7f020077
+			public const int notification_template_icon_bg = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int notification_template_icon_low_bg = 2130837624;
 			
 			// aapt resource value: 0x7f020072
-			public const int notify_panel_notification_icon_bg = 2130837618;
+			public const int notification_tile_bg = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int side_nav_bar = 2130837619;
+			public const int notify_panel_notification_icon_bg = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int tooltip_frame_dark = 2130837620;
+			public const int side_nav_bar = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tooltip_frame_light = 2130837621;
+			public const int tooltip_frame_dark = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int tooltip_frame_light = 2130837622;
 			
 			static Drawable()
 			{
@@ -2414,14 +2417,14 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800b4
 			public const int EnqueueInSauna = 2131230900;
 			
-			// aapt resource value: 0x7f0800d6
-			public const int EnqueueInTurkishBath = 2131230934;
+			// aapt resource value: 0x7f0800db
+			public const int EnqueueInTurkishBath = 2131230939;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
 			
-			// aapt resource value: 0x7f0800da
-			public const int FinnishSauna = 2131230938;
+			// aapt resource value: 0x7f0800df
+			public const int FinnishSauna = 2131230943;
 			
 			// aapt resource value: 0x7f0800b3
 			public const int FinnishSaunaDescription = 2131230899;
@@ -2429,8 +2432,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800b5
 			public const int FinnishSaunaText = 2131230901;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int Jacuzzi = 2131230941;
+			// aapt resource value: 0x7f0800e2
+			public const int Jacuzzi = 2131230946;
 			
 			// aapt resource value: 0x7f0800a7
 			public const int JacuzziDescription = 2131230887;
@@ -2438,8 +2441,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800a9
 			public const int JacuzziText = 2131230889;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int Kneipp = 2131230940;
+			// aapt resource value: 0x7f0800e1
+			public const int Kneipp = 2131230945;
 			
 			// aapt resource value: 0x7f0800aa
 			public const int KneippDescription = 2131230890;
@@ -2465,6 +2468,21 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
 			
+			// aapt resource value: 0x7f0800d1
+			public const int Reservation1 = 2131230929;
+			
+			// aapt resource value: 0x7f0800d2
+			public const int Reservation2 = 2131230930;
+			
+			// aapt resource value: 0x7f0800d3
+			public const int Reservation3 = 2131230931;
+			
+			// aapt resource value: 0x7f0800d4
+			public const int Reservation4 = 2131230932;
+			
+			// aapt resource value: 0x7f0800d0
+			public const int ReservationTitle = 2131230928;
+			
 			// aapt resource value: 0x7f080036
 			public const int SHIFT = 2131230774;
 			
@@ -2474,17 +2492,17 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800a4
 			public const int SignupButton = 2131230884;
 			
-			// aapt resource value: 0x7f0800d3
-			public const int SignupNicknameLabel = 2131230931;
+			// aapt resource value: 0x7f0800d8
+			public const int SignupNicknameLabel = 2131230936;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int SignupNicknameTxt = 2131230930;
+			// aapt resource value: 0x7f0800d7
+			public const int SignupNicknameTxt = 2131230935;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int SignupPasswordLabel = 2131230929;
+			// aapt resource value: 0x7f0800d6
+			public const int SignupPasswordLabel = 2131230934;
 			
-			// aapt resource value: 0x7f0800d0
-			public const int SignupPasswordTxt = 2131230928;
+			// aapt resource value: 0x7f0800d5
+			public const int SignupPasswordTxt = 2131230933;
 			
 			// aapt resource value: 0x7f0800a5
 			public const int TestText = 2131230885;
@@ -2495,14 +2513,14 @@ namespace MobileApplications
 			// aapt resource value: 0x7f0800c9
 			public const int TitleProfile = 2131230921;
 			
-			// aapt resource value: 0x7f0800db
-			public const int TurkishBath = 2131230939;
+			// aapt resource value: 0x7f0800e0
+			public const int TurkishBath = 2131230944;
 			
-			// aapt resource value: 0x7f0800d5
-			public const int TurkishBathDescription = 2131230933;
+			// aapt resource value: 0x7f0800da
+			public const int TurkishBathDescription = 2131230938;
 			
-			// aapt resource value: 0x7f0800d7
-			public const int TurkishBathText = 2131230935;
+			// aapt resource value: 0x7f0800dc
+			public const int TurkishBathText = 2131230940;
 			
 			// aapt resource value: 0x7f0800ce
 			public const int UpdateButton = 2131230926;
@@ -2561,8 +2579,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800df
-			public const int action_settings = 2131230943;
+			// aapt resource value: 0x7f0800e4
+			public const int action_settings = 2131230948;
 			
 			// aapt resource value: 0x7f0800b8
 			public const int action_text = 2131230904;
@@ -2765,17 +2783,17 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800de
-			public const int logout_button = 2131230942;
+			// aapt resource value: 0x7f0800e3
+			public const int logout_button = 2131230947;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int masked = 2131230937;
+			// aapt resource value: 0x7f0800de
+			public const int masked = 2131230942;
 			
 			// aapt resource value: 0x7f0800bc
 			public const int media_actions = 2131230908;
 			
-			// aapt resource value: 0x7f0800d4
-			public const int message = 2131230932;
+			// aapt resource value: 0x7f0800d9
+			public const int message = 2131230937;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -3032,8 +3050,8 @@ namespace MobileApplications
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int visible = 2131230936;
+			// aapt resource value: 0x7f0800dd
+			public const int visible = 2131230941;
 			
 			// aapt resource value: 0x7f080093
 			public const int weatherDescTextView = 2131230867;
@@ -3305,25 +3323,28 @@ namespace MobileApplications
 			public const int profile_page = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int select_dialog_item_material = 2130968641;
+			public const int reservations = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_multichoice_material = 2130968642;
+			public const int select_dialog_item_material = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int select_dialog_singlechoice_material = 2130968643;
+			public const int select_dialog_multichoice_material = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int signup_page = 2130968644;
+			public const int select_dialog_singlechoice_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int support_simple_spinner_dropdown_item = 2130968645;
+			public const int signup_page = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int tooltip = 2130968646;
+			public const int support_simple_spinner_dropdown_item = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int turkishbaths = 2130968647;
+			public const int tooltip = 2130968647;
+			
+			// aapt resource value: 0x7f040048
+			public const int turkishbaths = 2130968648;
 			
 			static Layout()
 			{
