@@ -26,8 +26,15 @@ namespace DAL
                 command.Connection = conn;
                 command.Parameters.AddWithValue("@Nickname", userDaInserire.Nickname);
                 command.Parameters.AddWithValue("@Password", userDaInserire.Password);
+                if (!String.IsNullOrEmpty(userDaInserire.FacebookID))
+                {
+                    command.Parameters.AddWithValue("@FacebookID", userDaInserire.FacebookID);
+                    command.CommandText = "INSERT INTO Users (Nickname, Password, FacebookID) VALUES (@Nickname, @Password, @FacebookID)";
+                } else
+                {
+                    command.CommandText = "INSERT INTO Users (Nickname, Password) VALUES (@Nickname, @Password)";
+                }
 
-                command.CommandText = "INSERT INTO Users (Nickname, Password) VALUES (@Nickname, @Password)";
                 command.ExecuteNonQuery();
 
                 conn.Close();
@@ -110,6 +117,37 @@ namespace DAL
             return userDaRestituire;
         }
 
+        public static User ReadUser(string facebookID)
+        {
+            SqlConnection conn = Connetti();
+
+            string query = "SELECT * FROM Users WHERE Users.FacebookID = '" + facebookID + "'";
+
+            User userDaRestituire = null;
+
+            SqlDataReader reader;
+            using (conn)
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(query);
+                command.Connection = conn;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id_ret = (int)reader["Id"];
+                    string nickname = reader["Nickname"]?.ToString();
+                    string password = reader["Password"]?.ToString();
+
+                    userDaRestituire = new User(id_ret, nickname, password, facebookID);
+                }
+                reader.Close();
+                conn.Close();
+            }
+            BE.User.CurrentUser = userDaRestituire;
+            return userDaRestituire;
+        }
+
+
         public static void UpdateUser(User userDaAggiornare, String nuovoNickname, String nuovaPassword)
         {
             SqlConnection conn = Connetti();
@@ -160,6 +198,7 @@ namespace DAL
             userDaSloggare.Id = 0;
             userDaSloggare.Nickname = null;
             userDaSloggare.Password = null;
+            userDaSloggare.FacebookID = null;
         }
 
         public static bool CheckNickname(string nickname)
