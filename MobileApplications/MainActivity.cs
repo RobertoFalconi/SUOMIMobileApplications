@@ -218,8 +218,11 @@ namespace MobileApplications
                 weatherDescView.Text = weatherCompleteDescription;
 
                 ImageView weatherImage = FindViewById<ImageView>(Resource.Id.weatherImageView);
-                var imageBitmap = GetBitmapFromUrl("http://openweathermap.org/img/w/" + weather.Icon + ".png");
-                weatherImage.SetImageBitmap(imageBitmap);
+                try
+                {
+                    var imageBitmap = GetBitmapFromUrl("http://openweathermap.org/img/w/" + weather.Icon + ".png");
+                    weatherImage.SetImageBitmap(imageBitmap);
+                } catch { }
 
             }
         }
