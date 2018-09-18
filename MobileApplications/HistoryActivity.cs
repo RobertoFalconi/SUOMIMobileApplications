@@ -66,7 +66,7 @@ namespace MobileApplications
                     Reservation1.Text = "It's your turn!";
                 }
             }
-            if (BLL.GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            if (BLL.GestioneTurkishBaths.ControllaUtente(BE.User.CurrentUser))
             {
                 List<string> turkishBathUsers = BLL.GestioneTurkishBaths.ReadTurkishBath();
                 int index = turkishBathUsers.FindIndex(x => x == BE.User.CurrentUser.Nickname);
@@ -80,7 +80,7 @@ namespace MobileApplications
                     Reservation2.Text = "It's your turn!";
                 }
             }
-            if (BLL.GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            if (BLL.GestioneKneipps.ControllaUtente(BE.User.CurrentUser))
             {
                 List<string> kneippUsers = BLL.GestioneKneipps.ReadKneipp();
                 int index = kneippUsers.FindIndex(x => x == BE.User.CurrentUser.Nickname);
@@ -94,7 +94,7 @@ namespace MobileApplications
                     Reservation3.Text = "It's your turn!";
                 }
             }
-            if (BLL.GestioneFinnishSaunas.ControllaUtente(BE.User.CurrentUser))
+            if (BLL.GestioneJacuzzis.ControllaUtente(BE.User.CurrentUser))
             {
                 List<string> jacuzziUsers = BLL.GestioneJacuzzis.ReadJacuzzi();
                 int index = jacuzziUsers.FindIndex(x => x == BE.User.CurrentUser.Nickname);
