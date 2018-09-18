@@ -19,6 +19,8 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using Xamarin.Facebook;
+using Xamarin.Facebook.Login;
 
 namespace MobileApplications
 {
@@ -160,6 +162,10 @@ namespace MobileApplications
             else if (id == Resource.Id.logout_button)
             {
                 BLL.GestioneUsers.LogoutUser(BE.User.CurrentUser);
+                if (AccessToken.CurrentAccessToken != null)
+                {
+                    LoginManager.Instance.LogOut();
+                }
                 StartActivity(typeof(FirstPageActivity));
             }
 

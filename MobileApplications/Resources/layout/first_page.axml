@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:background="@drawable/login_background">
+	
+	 
+	
 	<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,19 +33,34 @@
 	</LinearLayout>
 
 	<TextView
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="40dp"
 		android:layout_centerInParent="true"
-		android:text="Welcome to SUOMI!"
+		android:text="SUOMI"
 		android:textStyle="bold"
-		android:textSize="30dp"
+		android:textSize="35dp"
 		android:textColor="#FFF"
 		android:layout_marginBottom="30dp"
-		android:layout_marginLeft="10dp"
-		android:layout_marginRight="10dp"
 		android:id="@+id/TestText"
-		android:layout_centerHorizontal="true"
 		android:layout_above="@id/Buttons"
-		android:autoSizeTextType="uniform"
+		android:fontFamily="@font/skranji"
 	/>
+
+	<com.facebook.login.widget.LoginButton
+		android:id="@+id/FacebookLoginButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="30dp"
+		android:layout_marginBottom="30dp"
+		android:layout_below="@id/Buttons"
+	/>
+
+	<ProgressBar
+		android:id="@+id/indeterminateBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/FacebookLoginButton"
+		android:layout_centerHorizontal="true"
+      />
 </RelativeLayout>

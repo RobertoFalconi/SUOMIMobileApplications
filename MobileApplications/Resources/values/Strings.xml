@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">SUOMI</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Profile Settings</string>
+  <string name="app_name">SUOMI</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="action_settings">Profile Settings</string>
+  <string name="facebook_app_id">921785248010595</string>
+  <string name="fb_login_protocol_scheme">fb921785248010595</string>
 </resources>

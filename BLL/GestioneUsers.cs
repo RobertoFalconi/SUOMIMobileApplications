@@ -20,6 +20,11 @@ namespace BLL
             return DAL.GestioneUsers.ReadUser(nickname, password);
         }
 
+        public static User ReadFacebookUser(string facebookID)
+        {
+            return DAL.GestioneUsers.ReadUser(facebookID);
+        }
+
         public static User ReadUser(int id)
         {
             return DAL.GestioneUsers.ReadUser(id);
@@ -45,6 +50,18 @@ namespace BLL
         public static User LoginUser(string nickname, string password)
         {
             return ReadUser(nickname, password);
+        }
+
+        public static void SigninFacebookUser(string nickname, string password, string facebookID)
+        {
+            User userDaRegistrare = new User(nickname, password, facebookID);
+            User.CurrentUser = userDaRegistrare;
+            CreateUser(userDaRegistrare);
+        }
+
+        public static User LoginFacebookUser(string facebookID)
+        {
+            return ReadFacebookUser(facebookID);
         }
 
         public static void LogoutUser(User userDaSloggare)
