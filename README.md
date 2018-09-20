@@ -31,7 +31,7 @@ SUOMI lets a spa owner to turn a spa into a smart one for better results, thanks
 So, SUOMI turns an old spa into a smart one. How? SUOMI will be a “smart guide” that will help a spa customer to maximize its benefit and to avoid dangerous practices.
 
 # Software Architecture
-SUOMI is an Android App coded in .NET Frameworks using C# and Xamarin, with Visual Studio 2017.
-SUOMI is designed to implement a three layer software architecture: User Interface (Mobile Application), Business Logic (intermediate layer) and Data Access (the layer connected to the DBMS). Then, there is another layer, called the Business Entity, connected to all the other layers and where the objects' classes are implemented.
-
+SUOMI is an Android App coded in .NET Frameworks using C# and Xamarin, with Visual Studio 2017.  
+SUOMI is designed to implement a three layer software architecture: User Interface (Mobile Application), Business Logic (intermediate layer) and Data Access (the layer connected to the DBMS). Then, there is another layer, called the Business Entity, connected to all the other layers and where the objects' classes are implemented.  
+  
 To implement the DBMS we used Microsoft Azure, hosting it on the cloud.
