@@ -1,6 +1,7 @@
 #  MobileApplications
-Modern, fully-native, Android App. Developed in Xamarin.Android using Visual Studio and Microsoft Azure.
-
+Modern, fully-native, Android App. Developed in Xamarin.Android using Visual Studio and Microsoft Azure.  
+Xamarin Android version of the original project SUOMI: https://github.com/RobertoFalconi/SUOMI.  
+  
 # Useful Links
 
 LinkedIn:  
