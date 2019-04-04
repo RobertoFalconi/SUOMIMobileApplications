@@ -1,5 +1,5 @@
 #  MobileApplications
-Modern, fully-native, Android App. Developed in Xamarin.Android using Visual Studio and Microsoft Azure.  
+Modern, fully-native, Android App that guides users of a spa in the best possible journey using IoT. Developed in Xamarin.Android using Visual Studio and Microsoft Azure.  
 Xamarin Android version of the original project SUOMI: https://github.com/RobertoFalconi/SUOMI.  
   
 # Useful Links
