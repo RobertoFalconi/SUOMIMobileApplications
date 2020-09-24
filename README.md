@@ -19,7 +19,7 @@ SlideShare:
 - https://www.slideshare.net/FedericoGuidi5
 
 Portfolio:
-- http://www.robertodaguarcino.com  
+- https://robertodaguarcino.com  
   
 # Abstract
 Seven people die from stress every two seconds. What do anxiety, panic attacks, depression, coronary heart disease, high blood pressure, fears, phobias, irritable bowel, fibromyalgia, ulcers, self-destructive habits like overeating, and others all have in common?
